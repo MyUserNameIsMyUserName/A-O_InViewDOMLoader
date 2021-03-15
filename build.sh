@@ -5,8 +5,8 @@ mkdir dist
 mkdir dist/build_staging
 npx babel src/ --out-dir dist/build_staging/ --plugins remove-comments --ignore "src/assets/*"
 sleep 1
-minify dist/build_staging/ --out-dir dist/ --mangle.keepClassName
-rm -r dist/build_staging
+#minify dist/build_staging/ --out-dir dist/ --mangle.keepClassName
+#rm -r dist/build_staging
 rm -r dist/assets/*.bmp
 rm -r dist/assets/img/*.bmp
 rm -r dist/assets/*.jpg
