@@ -1,0 +1,23 @@
+{
+  "name": "SSOSL-SuperSpeedOnScrollLoader.js",
+  "version": "1.0.0",
+  "description": "Way to load stuff in modern web.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "_install": "npm install ; npm install -g node-sass nodemon @babel/core @babel/cli babel-minify image-2-min imagemin-cli imagemin-pngquant pngquant-bin gifsicle localtunnel",
+    "build": "",
+    "dev": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MyUserNameIsMyUserName/SSOSL-SuperSpeedOnScrollLoader.js.git"
+  },
+  "keywords": [],
+  "author": "Slavko Vuletic",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MyUserNameIsMyUserName/SSOSL-SuperSpeedOnScrollLoader.js/issues"
+  },
+  "homepage": "https://github.com/MyUserNameIsMyUserName/SSOSL-SuperSpeedOnScrollLoader.js#readme"
+}
