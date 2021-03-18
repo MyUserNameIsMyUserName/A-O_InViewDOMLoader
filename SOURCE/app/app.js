@@ -13,7 +13,7 @@ window.onload = function () {
 
 function bodyFunction() {
     //console.log("bodyFunction();")
-};
+}
 
 function appFunction() {
     //console.log("appFunction();")
