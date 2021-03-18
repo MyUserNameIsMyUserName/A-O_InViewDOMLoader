@@ -48,15 +48,14 @@ const handler = () => raf(() => {
     if (notYetDone === 0) {
         //console.log('Done! Detaching scroll event listener...')
         window.removeEventListener("scroll", handler);
-    }
-})
+    };
+});
 
 //Self addig on dom load
 document.onreadystatechange = function () {
     switch (document.readyState) {
         case "loading":
             // The document is still loading.;
-
             break;
         case "interactive":
             // DOMContentLoaded event.
