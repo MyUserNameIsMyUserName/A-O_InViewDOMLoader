@@ -5,9 +5,21 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "_install": "npm install && npm install -g node-sass nodemon @babel/core @babel/cli babel-minify image-2-min imagemin-cli imagemin-pngquant pngquant-bin gifsicle localtunnel",
-    "build": "bash build.sh",
-    "dev": ""
+    "__make_application__": " bash -c \" npm run _install && cp -r ./A-O_builder-express/SOURCE ./ && cp ./A-O_builder-express/ao_express.js ./ao_express.js \"",
+    "_install": " npm install copy-dependencies -g && bash -c \" git clone https://github.com/MyUserNameIsMyUserName/A-O_builder-express.git  && copy-dependencies ./A-O_builder-express/ ./ && echo |bash A-O_builder-express/ao_builder/install.sh \"",
+    "_uninstall": "bash -c \" rm -r  A-O_builder-express -f && rm -r node_modules -f && rm -r PUBLIC -f && rm package-lock.json \"",
+    "_build": "bash A-O_builder-express/ao_builder/build.sh ",
+    "_build_dev": "bash A-O_builder-express/ao_builder/build.sh dev",
+    "_build_and_serve": "npm run _build && npm run _serve ",
+    "_serve": "start node ao_express.js",
+    "in_": "npm run _install",
+    "uni_": "npm run _uninstall",
+    "b_": "npm run _build",
+    "bs_": "npm run _build_and_serve",
+    "bsd_": "  npm run _serve && nodemon --exec npm run _build_dev --ignore PUBLIC",
+    "_local_tunnel": "npm run ao && start lt --port 8888",
+    "lt_": "npm run _local_tunnel",
+    "_dist": "  start bash -c \" bash -c 'npm run in_' ; bash -c 'npm run b_' ; bash -c 'rm -rf dist' ; bash -c 'mkdir dist' ; bash -c 'cp ./PUBLIC/ssosl.js ./dist/ssosl.min.js ' ;  \""
   },
   "repository": {
     "type": "git",

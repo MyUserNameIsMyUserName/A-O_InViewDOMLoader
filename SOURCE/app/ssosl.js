@@ -1,3 +1,4 @@
+//TESTING USER VIEW
 const isInUserView = el => {
     const scroll = window.scrollY || window.pageYOffset
     const boundsTop = el.getBoundingClientRect().top + scroll
@@ -16,55 +17,7 @@ const isInUserView = el => {
         || (bounds.top <= viewport.bottom && bounds.top >= viewport.top)
 }
 
-function footerFunction() {
-    console.log('FooterFunction();')
-}
-
-function aboutFunction() {
-    console.log('aboutFunction();')
-}
-
-function heroFunction() {
-    console.log('heroFunction();')
-}
-
-function newConsultationFunction() {
-    console.log('newConsultationFunction();')
-}
-
-function testimonialsFunction() {
-    console.log('testimonialsFunction()')
-}
-// Usage.
-
-var testItems = [
-    {
-        'className': '.desktop-footer',
-        'done': false,
-        call() { footerFunction() }
-    },
-    {
-        'className': '.about-us',
-        'done': false,
-        call() { aboutFunction() }
-    },
-    {
-        'className': '.lp-header-overlay',
-        'done': false,
-        call() { heroFunction() }
-    },
-    {
-        'className': '.new_consultation ',
-        'done': false,
-        call() { newConsultationFunction() }
-    },
-    {
-        'className': '.testimonials ',
-        'done': false,
-        call() { testimonialsFunction() }
-    }
-]
-
+//HANDLING CALLBACKS AND MARKING DONE
 const handler = () => raf(() => {
     //console.log('yea...scrolling');
     var notYetDone = 0
@@ -86,7 +39,6 @@ const handler = () => raf(() => {
     };
 })
 
-
 // requestAnimationFrame
 var raf =
     window.requestAnimationFrame ||
@@ -96,9 +48,7 @@ var raf =
         window.setTimeout(callback, 1000 / 60)
     }
 
-////END SCROLLER
-
-// Alternative to load event
+//Self addig on dom load
 document.onreadystatechange = function () {
     switch (document.readyState) {
         case "loading":
