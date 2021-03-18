@@ -12,7 +12,58 @@
         <h1>Welcome and have fun!</h1>
         <img src='/assets/img/logo.png'>
     </div>
-    <script src="/app.js"></script>
+    <script>
+
+        function footerFunction() {
+            console.log('FooterFunction();')
+        }
+
+        function aboutFunction() {
+            console.log('aboutFunction();')
+        }
+
+        function heroFunction() {
+            console.log('heroFunction();')
+        }
+
+        function newConsultationFunction() {
+            console.log('newConsultationFunction();')
+        }
+
+        function testimonialsFunction() {
+            console.log('testimonialsFunction()')
+        }
+        // Usage.
+
+        var testItems = [
+            {
+                'className': '.desktop-footer',
+                'done': false,
+                call() { footerFunction() }
+            },
+            {
+                'className': '.about-us',
+                'done': false,
+                call() { aboutFunction() }
+            },
+            {
+                'className': '.lp-header-overlay',
+                'done': false,
+                call() { heroFunction() }
+            },
+            {
+                'className': '.new_consultation ',
+                'done': false,
+                call() { newConsultationFunction() }
+            },
+            {
+                'className': '.testimonials ',
+                'done': false,
+                call() { testimonialsFunction() }
+            }
+        ]
+
+    </script>
     <script src="/ssosl.js"></script>
 </body>
 
