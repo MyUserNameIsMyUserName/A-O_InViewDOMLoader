@@ -17,19 +17,19 @@ function bodyFunction() {
 
 function appFunction() {
     //console.log("appFunction();")
-};
+}
 
 function htmlFunction() {
     //console.log("htmlFunction();")
-};
+}
 
 function titleFunction() {
     //console.log("titleFunction();")
-};
+}
 
 function imgFunction() {
     //console.log("imgFunction()")
-};
+}
 
 // Usage.
 var testItems = [
