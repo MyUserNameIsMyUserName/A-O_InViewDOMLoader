@@ -30,11 +30,11 @@ const handler = () => raf(() => {
             } else {
                 //console.log('Is '+element.className+' visible? NO')
                 notYetDone++
-            };
+            }
         }
     })
 
-    if (notYetDone == 0) {
+    if (notYetDone === 0) {
         //console.log('Done! Detaching scroll event listener...')
         window.removeEventListener("scroll", handler)
     }
