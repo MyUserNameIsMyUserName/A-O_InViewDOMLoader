@@ -64,5 +64,5 @@ document.onreadystatechange = function () {
             // The document is finished loading.
             break
     }
-    console.log(document.readyState)
+    //console.log(document.readyState)
 }
