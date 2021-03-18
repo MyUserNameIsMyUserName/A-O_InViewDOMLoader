@@ -1,3 +1,12 @@
+// requestAnimationFrame
+var raf =
+    window.requestAnimationFrame ||
+    window.webkitRequestAnimationFrame ||
+    window.mozRequestAnimationFrame ||
+    function (callback) {
+        window.setTimeout(callback, 1000 / 60)
+    }
+
 //TESTING USER VIEW
 const isInUserView = el => {
     const scroll = window.scrollY || window.pageYOffset
@@ -39,15 +48,6 @@ const handler = () => raf(() => {
         window.removeEventListener("scroll", handler)
     }
 })
-
-// requestAnimationFrame
-var raf =
-    window.requestAnimationFrame ||
-    window.webkitRequestAnimationFrame ||
-    window.mozRequestAnimationFrame ||
-    function (callback) {
-        window.setTimeout(callback, 1000 / 60)
-    }
 
 //Self addig on dom load
 document.onreadystatechange = function () {
