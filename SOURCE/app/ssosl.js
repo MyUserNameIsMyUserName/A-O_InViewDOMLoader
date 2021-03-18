@@ -5,26 +5,26 @@ var raf =
     window.mozRequestAnimationFrame ||
     function (callback) {
         window.setTimeout(callback, 1000 / 60)
-    }
+    };
 
 //TESTING USER VIEW
 const isInUserView = (el) => {
-    const scroll = window.scrollY || window.pageYOffset
-    const boundsTop = document.querySelector(el).getBoundingClientRect().top + scroll
+    const scroll = window.scrollY || window.pageYOffset;
+    const boundsTop = document.querySelector(el).getBoundingClientRect().top + scroll;
 
     const viewport = {
         top: scroll,
         bottom: scroll + window.innerHeight,
-    }
+    };
 
     const bounds = {
         top: boundsTop,
         bottom: boundsTop + el.clientHeight,
-    }
+    };
 
     return (bounds.bottom >= viewport.top && bounds.bottom <= viewport.bottom)
-        || (bounds.top <= viewport.bottom && bounds.top >= viewport.top)
-}
+        || (bounds.top <= viewport.bottom && bounds.top >= viewport.top);
+};
 
 //HANDLING CALLBACKS AND MARKING DONE
 const handler = () => raf(() => {
@@ -59,12 +59,12 @@ document.onreadystatechange = function () {
             break
         case "interactive":
             // DOMContentLoaded event.
-            handler()
-            window.addEventListener("scroll", handler)
+            handler();
+            window.addEventListener("scroll", handler);
             break
         case "complete":
             // The document is finished loading.
             break
     };
     //console.log(document.readyState)
-}
+};
