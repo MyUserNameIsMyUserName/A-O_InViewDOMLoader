@@ -8,56 +8,56 @@
 //╚═══════════════════════════════════════════════════════════════╩═══════════════╝
 
 window.onload = function () {
-    console.log('YEAA HAVING FUN! :D')
+    console.log("YEAA HAVING FUN! :D")
 }
 
 
 
 function bodyFunction() {
-    console.log('bodyFunction();')
+    console.log("bodyFunction();")
 }
 
 function appFunction() {
-    console.log('appFunction();')
+    console.log("appFunction();")
 }
 
 function htmlFunction() {
-    console.log('htmlFunction();')
+    console.log("htmlFunction();")
 }
 
 function titleFunction() {
-    console.log('titleFunction();')
+    console.log("titleFunction();")
 }
 
 function imgFunction() {
-    console.log('imgFunction()')
+    console.log("imgFunction()")
 }
 // Usage.
 
 var testItems = [
     {
-        'className': 'body',
-        'done': false,
+        "className": "body",
+        "done": false,
         call() { bodyFunction() }
     },
     {
-        'className': '#app',
-        'done': false,
+        "className": "#app",
+        "done": false,
         call() { appFunction() }
     },
     {
-        'className': 'html',
-        'done': false,
+        "className": "html",
+        "done": false,
         call() { htmlFunction() }
     },
     {
-        'className': 'h1',
-        'done': false,
+        "className": "h1",
+        "done": false,
         call() { titleFunction() }
     },
     {
-        'className': 'img',
-        'done': false,
+        "className": "img",
+        "done": false,
         call() { imgFunction() }
     }
 ]

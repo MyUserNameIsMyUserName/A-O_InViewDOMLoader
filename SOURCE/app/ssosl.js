@@ -35,7 +35,7 @@ const handler = () => raf(() => {
     })
     if (notYetDone == 0) {
         //console.log('Done! Detaching scroll event listener...')
-        window.removeEventListener('scroll', handler)
+        window.removeEventListener("scroll", handler)
     };
 })
 
@@ -57,7 +57,7 @@ document.onreadystatechange = function () {
         case "interactive":
             // DOMContentLoaded event.
             handler()
-            window.addEventListener('scroll', handler)
+            window.addEventListener("scroll", handler)
             break
         case "complete":
             // The document is finished loading.
