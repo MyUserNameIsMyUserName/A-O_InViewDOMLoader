@@ -15,22 +15,22 @@ const isInUserView = (el) => {
     const viewport = {
         top: scroll,
         bottom: scroll + window.innerHeight,
-    }
+    };
 
     const bounds = {
         top: boundsTop,
         bottom: boundsTop + el.clientHeight,
-    }
+    };
 
     return (bounds.bottom >= viewport.top && bounds.bottom <= viewport.bottom)
         || (bounds.top <= viewport.bottom && bounds.top >= viewport.top);
-}
+};
 
 //HANDLING CALLBACKS AND MARKING DONE
 const handler = () => raf(() => {
     //console.log('yea...scrolling')
     var notYetDone = 0;
-    if (testItems) {
+    if (typeof testItems !== "undefined") {
         testItems.forEach( (element) => {
             if (!element.done) {
                 if (isInUserView(element.className)) {
