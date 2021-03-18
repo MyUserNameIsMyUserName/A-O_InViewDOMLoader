@@ -1,53 +1,82 @@
+var testItems = {};
+var wnd = window;
+
+function addSSOSLOBJ( newItems = null){
+    console.log('FunctionCall >> [ function addSSOSLOBJ(newItems) ]');
+    if (newItems !== null){
+        testItems = newItems;
+    };
+};
+
+function initSSOSL(){
+    console.log('FunctionCall >> [ function initSSOSL() ]');
+    
+    try {
+        handler();
+        wnd.addEventListener("scroll", handler);
+    } catch (error) {
+        console.error(error);
+    }
+};
+
 // requestAnimationFrame
 var raf =
-    window.requestAnimationFrame ||
-    window.webkitRequestAnimationFrame ||
-    window.mozRequestAnimationFrame ||
+    wnd.requestAnimationFrame ||
+    wnd.webkitRequestAnimationFrame ||
+    wnd.mozRequestAnimationFrame ||
     function (callback) {
-        window.setTimeout(callback, 1000 / 60);
+        wnd.setTimeout(callback, 1000 / 60);
     };
 
 //TESTING USER VIEW
 const isInUserView = (el) => {
-    const scroll = window.scrollY || window.pageYOffset;
-    const boundsTop = document.querySelector(el).getBoundingClientRect().top + scroll;
+    console.log('FunctionCall >> [ function isInUserView(el) ] || [ Elem: '+el+' ]');
+    const scroll = wnd.scrollY || wnd.pageYOffset;
+    var elem = document.querySelector(el);
+    if (typeof elem !== "undefined") {
+        const boundsTop = ( elem ? elem.getBoundingClientRect().top : 0 ) + scroll;
 
-    const viewport = {
-        top: scroll,
-        bottom: scroll + window.innerHeight,
-    };
+        const viewport = {
+            top: scroll,
+            bottom: scroll + wnd.innerHeight,
+        };
 
-    const bounds = {
-        top: boundsTop,
-        bottom: boundsTop + el.clientHeight,
-    };
+        const bounds = {
+            top: boundsTop,
+            bottom: boundsTop + el.clientHeight,
+        };
 
-    return (bounds.bottom >= viewport.top && bounds.bottom <= viewport.bottom)
-        || (bounds.top <= viewport.bottom && bounds.top >= viewport.top);
+        return (bounds.bottom >= viewport.top && bounds.bottom <= viewport.bottom)
+            || (bounds.top <= viewport.bottom && bounds.top >= viewport.top);
+    } else {
+        return false;
+    }
 };
 
 //HANDLING CALLBACKS AND MARKING DONE
 const handler = () => raf(() => {
-    //console.log('yea...scrolling')
+    console.log('yea...scrolling')
     var notYetDone = 0;
     if (typeof testItems !== "undefined") {
-        testItems.forEach( (element) => {
-            if (!element.done) {
-                if (isInUserView(element.className)) {
-                    //console.log('Is '+element.className+' visible? YES')
-                    element.call();
-                    element.done = true;
-                } else {
-                    //console.log('Is '+element.className+' visible? NO')
-                    notYetDone++;
+        if (testItems.length > 0){
+            testItems.forEach( (element) => {
+                if (!element.done) {
+                    if (isInUserView(element.className)) {
+                        console.log('Is '+element.className+' visible? YES')
+                        element.call();
+                        element.done = true;
+                    } else {
+                        console.log('Is '+element.className+' visible? NO')
+                        notYetDone++;
+                    }
                 }
-            }
-        });
-    };
+            });
+        }
+    }
 
     if (notYetDone === 0) {
-        //console.log('Done! Detaching scroll event listener...')
-        window.removeEventListener("scroll", handler);
+        console.log('Done! Detaching scroll event listener...')
+        wnd.removeEventListener("scroll", handler);
     };
 });
 
@@ -59,8 +88,7 @@ document.onreadystatechange = function () {
             break;
         case "interactive":
             // DOMContentLoaded event.
-            handler();
-            window.addEventListener("scroll", handler);
+            wnd.dispatchEvent(new Event('ssosl_ready'))
             break;
         case "complete":
             // The document is finished loading.

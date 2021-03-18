@@ -1,10 +1,10 @@
 {
-  "name": "SSOSL-SuperSpeedOnScrollLoader.js",
+  "name": "ssosl-superspeedonscrollloader.js",
   "version": "1.0.0",
   "description": "Way to load stuff in modern web.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "istanbul cover PUBLIC/ssosl.js",
     "__make_application__": " bash -c \" npm run _install && cp -r ./A-O_builder-express/SOURCE ./ && cp ./A-O_builder-express/ao_express.js ./ao_express.js \"",
     "_install": " npm install copy-dependencies -g && bash -c \" git clone https://github.com/MyUserNameIsMyUserName/A-O_builder-express.git  && copy-dependencies ./A-O_builder-express/ ./ && echo |bash A-O_builder-express/ao_builder/install.sh \"",
     "_uninstall": "bash -c \" rm -r  A-O_builder-express -f && rm -r node_modules -f && rm -r PUBLIC -f && rm package-lock.json \"",
@@ -32,11 +32,14 @@
     "url": "https://github.com/MyUserNameIsMyUserName/SSOSL-SuperSpeedOnScrollLoader.js/issues"
   },
   "homepage": "https://github.com/MyUserNameIsMyUserName/SSOSL-SuperSpeedOnScrollLoader.js#readme",
+  "private": true,
   "dependencies": {
     "@babel/cli": "^7.12.10",
     "@babel/core": "^7.12.10",
+    "autoprefixer": "^6.5.4",
     "babel-loader": "^8.2.2",
     "babel-plugin-remove-comments": "^2.0.0",
+    "browserslist": "^4.16.3",
     "compression": "^1.7.4",
     "express": "^4.17.1",
     "livereload": "^0.9.1",
