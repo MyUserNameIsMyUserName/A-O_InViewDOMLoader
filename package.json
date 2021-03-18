@@ -18,7 +18,8 @@
     "bs_": "npm run _build_and_serve",
     "bsd_": "  npm run _serve && nodemon --exec npm run _build_dev --ignore PUBLIC",
     "_local_tunnel": "npm run ao && start lt --port 8888",
-    "lt_": "npm run _local_tunnel"
+    "lt_": "npm run _local_tunnel",
+    "_dist": " npm run uni_ && npm run in_ && npm run b_ && mkdir dist && cp ./DOCS/ssosl.js ./dist/ssosl.min.js && npm run uni_"
   },
   "repository": {
     "type": "git",
