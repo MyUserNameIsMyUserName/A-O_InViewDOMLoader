@@ -8,7 +8,7 @@ var raf =
     }
 
 //TESTING USER VIEW
-const isInUserView = el => {
+const isInUserView = (el) => {
     const scroll = window.scrollY || window.pageYOffset
     const boundsTop = document.querySelector(el).getBoundingClientRect().top + scroll
 
@@ -30,18 +30,20 @@ const isInUserView = el => {
 const handler = () => raf(() => {
     //console.log('yea...scrolling')
     var notYetDone = 0
-    testItems.forEach(element => {
-        if (!element.done) {
-            if (isInUserView(element.className)) {
-                //console.log('Is '+element.className+' visible? YES')
-                element.call()
-                element.done = true
-            } else {
-                //console.log('Is '+element.className+' visible? NO')
-                notYetDone++
+    if (testItems) {
+        testItems.forEach(element => {
+            if (!element.done) {
+                if (isInUserView(element.className)) {
+                    //console.log('Is '+element.className+' visible? YES')
+                    element.call()
+                    element.done = true
+                } else {
+                    //console.log('Is '+element.className+' visible? NO')
+                    notYetDone++
+                }
             }
-        }
-    })
+        })
+    }
 
     if (notYetDone === 0) {
         //console.log('Done! Detaching scroll event listener...')
@@ -63,6 +65,6 @@ document.onreadystatechange = function () {
         case "complete":
             // The document is finished loading.
             break
-    }
+    };
     //console.log(document.readyState)
 }

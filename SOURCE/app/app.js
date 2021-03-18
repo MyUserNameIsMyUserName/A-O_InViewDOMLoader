@@ -36,27 +36,27 @@ var testItems = [
     {
         "className": "body",
         "done": false,
-        call() { bodyFunction() }
+        call() { bodyFunction(); }
     },
     {
         "className": "#app",
         "done": false,
-        call() { appFunction() }
+        call() { appFunction(); }
     },
     {
         "className": "html",
         "done": false,
-        call() { htmlFunction() }
+        call() { htmlFunction(); }
     },
     {
         "className": "h1",
         "done": false,
-        call() { titleFunction() }
+        call() { titleFunction(); }
     },
     {
         "className": "img",
         "done": false,
-        call() { imgFunction() }
+        call() { imgFunction(); }
     }
 ];
 
