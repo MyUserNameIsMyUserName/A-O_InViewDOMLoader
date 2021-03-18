@@ -80,7 +80,6 @@ typings/
 
 # Nuxt.js build / generate output
 .nuxt
-dist
 
 # Gatsby files
 .cache/
@@ -106,4 +105,5 @@ dist
 A-O_builder-express
 PUBLIC
 package-lock.json
+dist/*
 !dist/ssosl.min.js
