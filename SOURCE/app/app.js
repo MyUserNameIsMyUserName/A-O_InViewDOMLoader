@@ -11,7 +11,6 @@ window.onload = function () {
     //console.log("YEAA HAVING FUN! :D")
 };
 
-
 function bodyFunction() {
     //console.log("bodyFunction();")
 };
@@ -31,8 +30,8 @@ function titleFunction() {
 function imgFunction() {
     //console.log("imgFunction()")
 };
-// Usage.
 
+// Usage.
 var testItems = [
     {
         "className": "body",
