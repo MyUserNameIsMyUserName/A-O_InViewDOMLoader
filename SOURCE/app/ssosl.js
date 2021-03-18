@@ -10,7 +10,7 @@ var raf =
 //TESTING USER VIEW
 const isInUserView = el => {
     const scroll = window.scrollY || window.pageYOffset
-    const boundsTop = el.getBoundingClientRect().top + scroll
+    const boundsTop = document.querySelector(el).getBoundingClientRect().top + scroll
 
     const viewport = {
         top: scroll,
@@ -32,7 +32,7 @@ const handler = () => raf(() => {
     var notYetDone = 0
     testItems.forEach(element => {
         if (!element.done) {
-            if (isInUserView(document.querySelector(element.className))) {
+            if (isInUserView(element.className)) {
                 //console.log('Is '+element.className+' visible? YES')
                 element.call()
                 element.done = true
