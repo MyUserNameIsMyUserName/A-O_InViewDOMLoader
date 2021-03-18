@@ -16,7 +16,7 @@
     "uni_": "npm run _uninstall",
     "b_": "npm run _build",
     "bs_": "npm run _build_and_serve",
-    "bsd_": "npm run _serve && nodemon --exec npm run _build_dev --ignore ./PUBLIC",
+    "bsd_": "  npm run _serve && nodemon --exec npm run _build_dev --ignore PUBLIC",
     "_local_tunnel": "npm run ao && start lt --port 8888",
     "lt_": "npm run _local_tunnel"
   },

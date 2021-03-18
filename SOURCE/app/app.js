@@ -7,55 +7,61 @@
 //║       than few days, better have something prepared.          ║ √ 23.01.2021. ║
 //╚═══════════════════════════════════════════════════════════════╩═══════════════╝
 
-
-function footerFunction() {
-    console.log('FooterFunction();')
+window.onload = function () {
+    console.log('YEAA HAVING FUN! :D')
 }
 
-function aboutFunction() {
-    console.log('aboutFunction();')
+
+
+function bodyFunction() {
+    console.log('bodyFunction();')
 }
 
-function heroFunction() {
-    console.log('heroFunction();')
+function appFunction() {
+    console.log('appFunction();')
 }
 
-function newConsultationFunction() {
-    console.log('newConsultationFunction();')
+function htmlFunction() {
+    console.log('htmlFunction();')
 }
 
-function testimonialsFunction() {
-    console.log('testimonialsFunction()')
+function titleFunction() {
+    console.log('titleFunction();')
+}
+
+function imgFunction() {
+    console.log('imgFunction()')
 }
 // Usage.
 
 var testItems = [
     {
-        'className': '.desktop-footer',
+        'className': 'body',
         'done': false,
-        call() { footerFunction() }
+        call() { bodyFunction() }
     },
     {
-        'className': '.about-us',
+        'className': '#app',
         'done': false,
-        call() { aboutFunction() }
+        call() { appFunction() }
     },
     {
-        'className': '.lp-header-overlay',
+        'className': 'html',
         'done': false,
-        call() { heroFunction() }
+        call() { htmlFunction() }
     },
     {
-        'className': '.new_consultation ',
+        'className': 'h1',
         'done': false,
-        call() { newConsultationFunction() }
+        call() { titleFunction() }
     },
     {
-        'className': '.testimonials ',
+        'className': 'img',
         'done': false,
-        call() { testimonialsFunction() }
+        call() { imgFunction() }
     }
 ]
+
 
 //▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 //▌   ! END OF FILE !            ▐▀▀▀         ▐▀▀▀             ! END OF FILE !    ▐
