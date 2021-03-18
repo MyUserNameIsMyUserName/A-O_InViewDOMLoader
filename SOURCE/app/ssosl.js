@@ -19,12 +19,12 @@ const isInUserView = el => {
 
 //HANDLING CALLBACKS AND MARKING DONE
 const handler = () => raf(() => {
-    //console.log('yea...scrolling');
+    //console.log('yea...scrolling')
     var notYetDone = 0
     testItems.forEach(element => {
         if (!element.done) {
             if (isInUserView(document.querySelector(element.className))) {
-                //console.log('Is '+element.className+' visible? YES');
+                //console.log('Is '+element.className+' visible? YES')
                 element.call()
                 element.done = true
             } else {
@@ -33,10 +33,11 @@ const handler = () => raf(() => {
             };
         }
     })
+
     if (notYetDone == 0) {
         //console.log('Done! Detaching scroll event listener...')
         window.removeEventListener("scroll", handler)
-    };
+    }
 })
 
 // requestAnimationFrame
