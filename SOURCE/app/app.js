@@ -9,29 +9,28 @@
 
 window.onload = function () {
     //console.log("YEAA HAVING FUN! :D")
-}
-
+};
 
 
 function bodyFunction() {
     //console.log("bodyFunction();")
-}
+};
 
 function appFunction() {
     //console.log("appFunction();")
-}
+};
 
 function htmlFunction() {
     //console.log("htmlFunction();")
-}
+};
 
 function titleFunction() {
     //console.log("titleFunction();")
-}
+};
 
 function imgFunction() {
     //console.log("imgFunction()")
-}
+};
 // Usage.
 
 var testItems = [
@@ -60,7 +59,7 @@ var testItems = [
         "done": false,
         call() { imgFunction() }
     }
-]
+];
 
 
 //▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
