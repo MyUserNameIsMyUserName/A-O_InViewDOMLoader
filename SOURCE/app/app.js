@@ -71,28 +71,7 @@ var appItems = [
     }
 ];
 
-window.addEventListener('ssosl_ready', (e) => {
 
-    console.log('EventListener got:[> ssosl_ready <]');
-
-    try {
-        addSSOSLOBJ(appItems);
-    } catch (error) {
-        console.error(error);
-    }
-
-    try {
-        initSSOSL();
-    } catch (error) {
-        console.error(error);
-    }
-    
-    try {
-        window.removeEventListener('ssosl_ready',this);
-    } catch (error) {
-        console.error(error);
-    }
-});
 
 //▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 //▌   ! END OF FILE !            ▐▀▀▀         ▐▀▀▀             ! END OF FILE !    ▐
