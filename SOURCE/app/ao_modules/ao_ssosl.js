@@ -120,3 +120,8 @@ window.addEventListener('ssosl_ready', (e) => {
         console.error(error);
     }
 });
+
+
+//if (document.readyState == "interactive"){
+//    wnd.dispatchEvent(new Event("ssosl_ready"));
+//}

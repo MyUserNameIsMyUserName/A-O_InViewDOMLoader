@@ -107,3 +107,4 @@ PUBLIC
 package-lock.json
 dist/*
 !dist/ssosl.min.js
+Dev_Tools/ngrok.exe
