@@ -5,3 +5,39 @@
 
 
 Way to load stuff in modern web.
+
+
+
+
+#
+## Development >>
+       
+This section provides more inside view on developer process, available thing to run, utilize, test... Warm welcome to anyone willing to join in and help get this weirdess to next level.   
+  
+
+## Resources & Tools:
+
+- tunneling   
+    We can use different ways tools to provide this functionality. Depending on the scenario some might be more appropriate then others. Best to check at the spot.    
+    
+  1. **localtunnel**   
+    Website: http://localtunnel.github.io/www/     
+    NPM: https://www.npmjs.com/package/localtunnel     
+    GitHub: https://github.com/localtunnel/localtunnel     
+
+        **NOTE**: will gets auto installed when you do **[ npm run __make_application\_\_ ]** on the start of it.
+       
+         npm run  __make_application__  
+
+        For manual information refer to NPM link.
+
+  2. **ngrok**   
+    Website: https://www.ngrok.com/     
+    Download & Run: https://dashboard.ngrok.com/get-started/setup     
+
+        **NOTE**: Not getting this one installed
+       
+         npm run  __make_application__  
+
+        For manual information refer to NPM link.
+
