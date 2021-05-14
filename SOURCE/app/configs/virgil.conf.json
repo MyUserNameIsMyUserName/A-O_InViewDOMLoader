@@ -1,0 +1,19 @@
+{
+  "navigationMode": "Default",
+  "routes": [
+    {
+      "route": "/",
+      "routeAliases": ["/index", "/index.html", "home", "welcome"],
+      "page": "/pages/home.js"
+    },
+    {
+      "route": "/documentation",
+      "routeAliases": ["/docs", "/app_docs"],
+      "page": "/pages/docs.js"
+    },
+    {
+      "route": "/contact",
+      "page": "/pages/contact.js"
+    }
+  ]
+}

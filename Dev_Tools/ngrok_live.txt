@@ -1,2 +1,2 @@
- http://https://451d96f2d50b.ngrok.io\n
- https://https://451d96f2d50b.ngrok.io\n
+https://8aed38ec7eaa.ngrok.io
+https://8aed38ec7eaa.ngrok.io

@@ -79,8 +79,8 @@ API=${API//$prefix}
 IFS=$'\n' read -rd '' -a FST <<<"$API"
 FST=${FST//http\:\/\/}
 sleep 1s
-LNK_HTTP="http://${FST}"
-LNK_HTTPS="https://${FST}"
+LNK_HTTP="${FST}"
+LNK_HTTPS="${FST}"
 printf " Status: ${C_GRN}ONLINE\n\n"
 printf " Link (HTTP):  ${LNK_HTTP}\n"
 printf " Link (HTTPS): ${LNK_HTTPS}\n"
