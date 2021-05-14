@@ -11,10 +11,19 @@
 
 let Application_Driver = {
   config: {
+    devMode : {
+      status: false,
+      return(){
+        return this.status;
+      },
+      make(val = false){
+        this.status = val;
+      }
+    },
     location: {
       local: "http://localhost:8080",
       tunnel_url: "https://8aed38ec7eaa.ngrok.io",
-      git_docs_url: "https://8aed38ec7eaa.ngrok.io",
+      git_docs_url: "https://myusernameismyusername.github.io/A-O_InViewDOMLoader/",
       current_origin: null,
     },
     elems: {
@@ -95,6 +104,11 @@ let Application_Driver = {
     },
 
     loadReq() {
+      
+      this.loadScript("/ao_modules/ao_router.js", function () {
+        findCurrentRoute();
+        Application_Driver.func.finishLoading();
+      });
 
       this.loadStyle("/assets/css/app.css");
       this.loadStyle("/assets/css/modal.css");
@@ -104,11 +118,7 @@ let Application_Driver = {
       this.loadScript("/ao_modules/ao_modal.js", function () {
         /* testModalFunc(); */
       });
-      this.loadScript("/ao_modules/ao_router.js", function () {
-        findCurrentRoute();
-        Application_Driver.func.finishLoading();
-      });
-      
+
     },
   },
 
@@ -133,6 +143,20 @@ let Application_Driver = {
     // Adding even listener for an onload...to trigger onload even in app.
     window.onload = this.onload();
   },
+
+  devMode(type = null){
+    if (type != null) {
+      if ((type == "base") || (type == "deep")) {
+        this.config.devMode = type;
+      } else {
+        this.config.devMode = true
+      }
+    } else {
+      this.config.devMode = true;
+      return true;
+    };
+    return false;
+  }
 };
 
 let app = Application_Driver;
