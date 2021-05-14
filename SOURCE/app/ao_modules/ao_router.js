@@ -5,32 +5,52 @@ var currentLocation = window.location.pathname.replace("A-O_documentation_maker/
 var routes = [
     {
         route: "/",
-        routeAliases: ["/index", "/index.html"],
+        routeAliases: ["/index", "/index.html", "/home", "/landing", "/root_front"],
         page() {
-            loadScript("/pages/home.js");
+            loadScript("/ao_modules/conf.home.js", function() { wnd.dispatchEvent(new Event("ssosl_ready")) } );
         }
     },
     {
         route: "/documentation",
         routeAliases: ["/docs", "/app_docs"],
         page() {
-            loadScript("/pages/docs.js");
+            loadScript("/ao_modules/conf.documentation.js", function() { wnd.dispatchEvent(new Event("ssosl_ready")) } );
+        }
+    },
+    {
+        route: "/about",
+        routeAliases: ["/about_us", "/about-us"],
+        page() {
+            loadScript("/ao_modules/conf.about_us.js", function() { wnd.dispatchEvent(new Event("ssosl_ready")) } );
         }
     },
     {
         route: "/contact",
+        routeAliases: ["/contact_me", "/contact-me", "/send_msg", "/message_me", "/message-me", "/message", "/make_contact", "/make-contact", "/send_war_pigeon", "/send-war-pigeon", "/run_boy_run", "/run-boy-run" ],
         page() {
-            loadScript("/pages/contact.js");
+            loadScript("/ao_modules/conf.contact.js", function() { wnd.dispatchEvent(new Event("ssosl_ready")) } );
         }
     }
 ];
 
 function show404page() {
-    loadScript("/pages/error_404.js");
+
+    loadScript("/ao_modules/conf.sys_error_page.js", function() { wnd.dispatchEvent(new Event("ssosl_ready")) } );
+
 }
 
 function findCurrentRoute() {
+
+    const development = new URLSearchParams(window.location.search).get("development");
+
+    if (development) {
+        console.info("|_!+!_ DEV MODE ON >> " + development + "  >>");
+      
+        loadScript("/ao_modules/ao_egah.js", function() { wnd.dispatchEvent(new Event("ssosl_ready")) } );
+    }
+
     var pageFound = false;
+
     for (let i = 0; i < routes.length; i++) {
         if (currentLocation === routes[i].route) {
             routes[i].page();
@@ -47,9 +67,11 @@ function findCurrentRoute() {
         }
 
     }
+
     if (!pageFound) {
         show404page();
     }
 
     return pageFound;
+
 }

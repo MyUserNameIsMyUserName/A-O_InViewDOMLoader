@@ -63,7 +63,7 @@ const handler = () => raf(() => {
                 if (!element.done) {
                     if (isInUserView(element.className)) {
                         console.log('Is '+element.className+' visible? YES')
-                        element.call();
+                        element.exec();
                         element.done = true;
                     } else {
                         console.log('Is '+element.className+' visible? NO')
@@ -122,6 +122,6 @@ window.addEventListener('ssosl_ready', (e) => {
 });
 
 
-//if (document.readyState == "interactive"){
-//    wnd.dispatchEvent(new Event("ssosl_ready"));
-//}
+if (document.readyState == "interactive"){
+    wnd.dispatchEvent(new Event("ssosl_ready"));
+}
