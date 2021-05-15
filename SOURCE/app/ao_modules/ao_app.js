@@ -54,7 +54,7 @@ let Application_Driver = {
 
     loadPage(name = null, onloadFunction) {
       Application_Driver.func.startLoading();
-      loadScript('/pages/'+name+'.js', onloadFunction);
+      loadScript("/pages/" + name + ".js", onloadFunction);
     },
 
     loadStyle(url) {
