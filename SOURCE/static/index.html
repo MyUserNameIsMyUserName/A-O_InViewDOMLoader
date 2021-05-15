@@ -74,6 +74,40 @@
             overflow-x: hidden;
             overflow-y: auto;
         }
+        button {
+            font-size: 1.25em;
+            color: white;
+            background: #690300;
+            padding: .75em 1.5em;
+            margin: 0.5em;
+            text-shadow: 0 0 5px black;
+            letter-spacing: .5em;
+            border: none;
+            box-shadow: 0 5px 10px #ce0000;
+            cursor: pointer;
+            transition: 0.15s ease all;
+        }
+
+        button:hover {
+            color: white;
+            background: #ce0303;
+            box-shadow: 0 7.5px 15px #690300;
+            transition: 0.35s ease all;
+            border: none;
+        }
+
+        button:active {
+            color: red;
+            background: #3c0200;
+            box-shadow: 0 1.5px 2px #ce0000;
+            transition: 0.05s ease all;
+            border: none;
+        }
+
+        button:focus {
+            outline: none;
+            border: none;
+        }
 
         div#loader {
             height: 100%;
@@ -135,7 +169,12 @@
             opacity: 0;
             z-index: -1;
         }
-
+        .section {
+            display: flex;
+            flex-direction: row;
+            max-width: 1280px;
+            position: relative;
+        }
         #app {
             transition: 0.5s ease all;
             transition-delay: 0.25s ease all;
