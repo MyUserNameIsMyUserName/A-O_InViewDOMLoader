@@ -26,12 +26,14 @@ var appItems = [
       console.log("bodyFunction();");
       var helper = document.body.innerHTML;
       document.body.innerHTML =
-        `<div id="app"><h1>Welcome and have fun!</h1>
-                                                  <h2>Welcome and have fun!</h2>
+        `<div id="app"><div class='section'><div class="half_side"><h1>Look morty!</h1>
+                                                  <h2>"Look Who's Purging Now!"</h2>
+                                                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Diam sit amet nisl suscipit adipiscing. Enim nulla aliquet porttitor lacus luctus. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Diam sit amet nisl suscipit adipiscing. Enim nulla aliquet porttitor lacus luctus.</p>
+                                                  <button>YEA WEEE</button><button>NOOOOOO</button>
+                                                  </div>
+                                                  <div class="half_side">
                                                   <img src="https://raw.githubusercontent.com/MyUserNameIsMyUserName/A-O_InViewDOMLoader/prime_build/SOURCE/static/assets/img/morty.png" alt="app_logo" width="660" height="" />
-                                                  <img src="https://raw.githubusercontent.com/MyUserNameIsMyUserName/A-O_documentation_maker/fukinMASTER/SOURCE/static/assets/img/logo.png" alt="app_logo" width="360" height="360" />
-                                                  <img src="https://raw.githubusercontent.com/MyUserNameIsMyUserName/A-O_documentation_maker/fukinMASTER/SOURCE/static/assets/img/logo.png" alt="app_logo" width="360" height="360" />
-                                                  </div>` + helper;
+                                                  </div></div></div>` + helper;
     },
   },
   {
@@ -49,7 +51,9 @@ var appItems = [
       console.log("titleFunction();");
       document.getElementById(
         "app"
-      ).innerHTML += `<img src="https://raw.githubusercontent.com/MyUserNameIsMyUserName/A-O_documentation_maker/fukinMASTER/SOURCE/static/assets/img/logo.png" alt="app_logo className-h1" width="360" height="360" />`;
+      ).innerHTML += `<div class='section'><img src="https://raw.githubusercontent.com/MyUserNameIsMyUserName/A-O_documentation_maker/fukinMASTER/SOURCE/static/assets/img/pickle.gif" alt="app_logo className-h1" width="360" height="360" />
+                                                  <img src="https://raw.githubusercontent.com/MyUserNameIsMyUserName/A-O_documentation_maker/fukinMASTER/SOURCE/static/assets/img/pickle.gif" alt="app_logo" width="360" height="360" />
+                                                  <img src="https://raw.githubusercontent.com/MyUserNameIsMyUserName/A-O_documentation_maker/fukinMASTER/SOURCE/static/assets/img/pickle.gif" alt="app_logo" width="360" height="360" /></div>`;
       document.getElementById("app").innerHTML +=
         "<h2>Welcome and have fun!</h2>";
     },
