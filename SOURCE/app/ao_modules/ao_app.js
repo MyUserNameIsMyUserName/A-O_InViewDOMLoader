@@ -142,7 +142,7 @@ let Application_Driver = {
         //Application_Driver.func.finishLoading();
       });
 
-      this.loadStyle("/assets/css/app.css");
+      
       this.loadStyle("/assets/css/modal.css");
       this.loadStyle("/assets/css/demo.css");
 
