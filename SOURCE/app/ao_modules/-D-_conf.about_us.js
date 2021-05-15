@@ -7,66 +7,53 @@
 //║       than few days, better have something prepared.          ║ √ 23.01.2021. ║
 //╚═══════════════════════════════════════════════════════════════╩═══════════════╝
 
-function bodyFunction() {
-  console.log("bodyFunction();");
-  var helper = document.body.innerHTML;
-  document.body.innerHTML = '<div id="app"></div>' + helper;
-}
-
-function appFunction() {
-  console.log("appFunction();");
-  document.getElementById("app").innerHTML = "<h1>Welcome and have fun!</h1>";
-}
-
-function htmlFunction() {
-  console.log("htmlFunction();");
-}
-
-function titleFunction() {
-  console.log("titleFunction();");
-  document.getElementById("app").innerHTML +=
-    '<img src="/assets/img/logo.png"></img>';
-}
-
-function imgFunction() {
-  console.log("imgFunction();");
-}
-
 // Usage.
-let appItems = [
+var appItems = [
+  {
+    className: "html",
+    done: false,
+    call() {
+      console.log("htmlFunction();");
+      document.head.title = "About page - Slavko V. [_/^\\_] ";
+      document.head.innerHTML += `<link rel="preload" as="image" href="https://raw.githubusercontent.com/MyUserNameIsMyUserName/A-O_documentation_maker/fukinMASTER/SOURCE/static/assets/img/logo.png">`;
+    },
+  },
   {
     className: "body",
     done: false,
     call() {
-      bodyFunction();
+      console.log("bodyFunction();");
+      var helper = document.body.innerHTML;
+      document.body.innerHTML = '<div id="app"></div>' + helper;
     },
   },
   {
     className: "#app",
     done: false,
     call() {
-      appFunction();
-    },
-  },
-  {
-    className: "html",
-    done: false,
-    call() {
-      htmlFunction();
+      console.log("appFunction();");
+      document.getElementById("app").innerHTML = "<h1>ABOUT PAGE INFO!</h1>";
     },
   },
   {
     className: "h1",
     done: false,
     call() {
-      titleFunction();
+      console.log("titleFunction();");
+      document.getElementById(
+        "app"
+      ).innerHTML += `<img src="https://raw.githubusercontent.com/MyUserNameIsMyUserName/A-O_documentation_maker/fukinMASTER/SOURCE/static/assets/img/logo.png" alt="app_logo className-h1" width="360" height="360" />`;
     },
   },
   {
     className: "img",
     done: false,
     call() {
-      imgFunction();
+      console.log("imgFunction();");
+      document.getElementById(
+        "app"
+      ).innerHTML += `<img src="https://raw.githubusercontent.com/MyUserNameIsMyUserName/A-O_documentation_maker/fukinMASTER/SOURCE/static/assets/img/logo.png" alt="app_logo className-img" width="360" height="360" style='transform: rotate3d(2, -1, -1, -0.2turn);'/>`;
+      wnd.dispatchEvent(new Event("onpageload"));
     },
   },
 ];

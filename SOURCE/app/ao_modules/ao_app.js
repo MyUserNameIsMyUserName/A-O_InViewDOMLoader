@@ -11,19 +11,20 @@
 
 let Application_Driver = {
   config: {
-    devMode : {
+    devMode: {
       status: false,
-      return(){
+      return() {
         return this.status;
       },
-      make(val = false){
+      make(val = false) {
         this.status = val;
-      }
+      },
     },
     location: {
       local: "http://localhost:8080",
-      tunnel_url: "https://8aed38ec7eaa.ngrok.io",
-      git_docs_url: "https://myusernameismyusername.github.io/A-O_InViewDOMLoader/",
+      tunnel_url: "https://e681c0920364.ngrok.io",
+      git_docs_url:
+        "https://myusernameismyusername.github.io/A-O_InViewDOMLoader/",
       current_origin: null,
     },
     elems: {
@@ -45,25 +46,52 @@ let Application_Driver = {
       var newScript = document.createElement("script");
       newScript.onerror = this.loadError;
       if (onloadFunction) {
-        newScript.onload = onloadFunction;
+        newScript.onload =  onloadFunction;
       }
       Application_Driver.config.elems.pageScripts.appendChild(newScript);
       newScript.src = url;
     },
 
+    loadPage(name = null, onloadFunction) {
+      Application_Driver.func.startLoading();
+      loadScript('/pages/'+name+'.js', onloadFunction);
+    },
+
     loadStyle(url) {
-      var newStyle = document.createElement("link");
-      newStyle.setAttribute("rel", "stylesheet");
-      newStyle.setAttribute("type", "text/css");
-      newStyle.setAttribute("href", url);
-      Application_Driver.config.elems.pageStyles.appendChild(newStyle);
+      var shouldAddNew = true;
+      var styles = document.querySelectorAll("link");
+      styles.forEach(styleElem => {
+        console.log(styleElem.getAttribute('href'));
+        if (url == styleElem.getAttribute('href')) {
+          console.log("Skipping new style : " + url +" ; Already present!");
+          shouldAddNew = false;
+        }
+      });
+      
+      if (shouldAddNew) {
+        console.log("Adding new style :" + url);
+        var newStyle = document.createElement("link");
+        newStyle.setAttribute("rel", "stylesheet");
+        newStyle.setAttribute("type", "text/css");
+        newStyle.setAttribute("href", url);
+        Application_Driver.config.elems.pageStyles.appendChild(newStyle);
+      }
     },
 
     finishLoading() {
-      document.body.classList.add("loaded");
+      console.info("finishLoading()");
+      let result = setTimeout(() => {
+        document.body.classList.add("loaded");
+        clearTimeout(this);
+      }, 1000);
+      
     },
 
     startLoading() {
+      console.info("startLoading()");
+      if (document.getElementById('app')){
+        document.getElementById('app').remove();
+      }
       document.body.classList.remove("loaded");
     },
 
@@ -72,14 +100,18 @@ let Application_Driver = {
 
       switch (window.location.origin) {
         case Application_Driver.config.location.local:
-          console.info("Application_Driver.config.location.local << FOUND");
+          console.info(
+            "Application_Driver.config.location.local << CONFIRMED ORIGIN TO :: " +
+              Application_Driver.config.location.local
+          );
           Application_Driver.config.location.current_origin =
             Application_Driver.config.location.local;
           break;
 
         case Application_Driver.config.location.git_docs_url:
           console.info(
-            "Application_Driver.config.location.git_docs_url << FOUND"
+            "Application_Driver.config.location.git_docs_url << CONFIRMED ORIGIN TO :: " +
+              Application_Driver.config.location.git_docs_url
           );
           Application_Driver.config.location.current_origin =
             Application_Driver.config.location.git_docs_url;
@@ -87,7 +119,8 @@ let Application_Driver = {
 
         case Application_Driver.config.location.tunnel_url:
           console.info(
-            "Application_Driver.config.location.tunnel_url << FOUND"
+            "Application_Driver.config.location.tunnel_url << CONFIRMED ORIGIN TO :: " +
+              Application_Driver.config.location.tunnel_url
           );
           Application_Driver.config.location.current_origin =
             Application_Driver.config.location.tunnel_url;
@@ -104,10 +137,9 @@ let Application_Driver = {
     },
 
     loadReq() {
-      
-      this.loadScript("/ao_modules/ao_router.js", function () {
+      this.loadScript("/modules/ao_router/ao_router.js", function () {
         findCurrentRoute();
-        Application_Driver.func.finishLoading();
+        //Application_Driver.func.finishLoading();
       });
 
       this.loadStyle("/assets/css/app.css");
@@ -118,7 +150,6 @@ let Application_Driver = {
       this.loadScript("/ao_modules/ao_modal.js", function () {
         /* testModalFunc(); */
       });
-
     },
   },
 
@@ -142,24 +173,30 @@ let Application_Driver = {
     );
     // Adding even listener for an onload...to trigger onload even in app.
     window.onload = this.onload();
+
+    window.addEventListener("onpageload", (e) => {
+      console.log("EventListener got:[> onpageload <]");
+      Application_Driver.func.finishLoading();
+    });
   },
 
-  devMode(type = null){
+  devMode(type = null) {
     if (type != null) {
-      if ((type == "base") || (type == "deep")) {
+      if (type == "base" || type == "deep") {
         this.config.devMode = type;
       } else {
-        this.config.devMode = true
+        this.config.devMode = true;
       }
     } else {
       this.config.devMode = true;
       return true;
-    };
+    }
     return false;
-  }
+  },
 };
 
 let app = Application_Driver;
+let loadPage = app.func.loadPage;
 let loadScript = app.func.loadScript;
 let loadStyle = app.func.loadStyle;
 

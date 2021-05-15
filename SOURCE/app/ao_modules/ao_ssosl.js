@@ -109,13 +109,21 @@ window.addEventListener('ssosl_ready', (e) => {
     }
 
     try {
-        initSSOSL();
+      initSSOSL();
     } catch (error) {
-        console.error(error);
+      console.error(error);
     }
-    
+
+});
+
+
+window.addEventListener('ssosl_die', (e) => {
+
+    console.log("EventListener got:[> ssosl_die <]");
+
     try {
-        window.removeEventListener('ssosl_ready',this);
+        window.removeEventListener("ssosl_ready", this);
+        window.removeEventListener("ssosl_die", this);
     } catch (error) {
         console.error(error);
     }

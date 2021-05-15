@@ -23,7 +23,8 @@ var appItems = [
     done: false,
     call() {
       console.log("appFunction();");
-      document.getElementById("app").innerHTML = "<h1>ABOUT PAGE INFO!</h1>";
+      document.getElementById("app").innerHTML =
+        "<h1>ERROR <span class='print_error_number'>404</span> PAGE!</h1>";
     },
   },
   {
@@ -31,7 +32,7 @@ var appItems = [
     done: false,
     call() {
       console.log("htmlFunction();");
-      document.head.title = "About page - Slavko V. [_/^\\_] ";
+      document.head.title = "404 page not found - Slavko V. [_/^\\_] ";
       document.head.innerHTML += `<link rel="preload" as="image" href="https://raw.githubusercontent.com/MyUserNameIsMyUserName/A-O_documentation_maker/fukinMASTER/SOURCE/static/assets/img/logo.png">`;
     },
   },
@@ -40,7 +41,12 @@ var appItems = [
     done: false,
     call() {
       console.log("titleFunction();");
-      document.getElementById("app").innerHTML += `<img src="https://raw.githubusercontent.com/MyUserNameIsMyUserName/A-O_documentation_maker/fukinMASTER/SOURCE/static/assets/img/logo.png" alt="app_logo className-h1" width="360" height="360" />`;
+      document.getElementById(
+        "app"
+      ).innerHTML += `<img src="https://raw.githubusercontent.com/MyUserNameIsMyUserName/A-O_documentation_maker/fukinMASTER/SOURCE/static/assets/img/logo.png" alt="app_logo className-h1" width="360" height="360" />`;
+      document.getElementById("app").innerHTML +=
+        "<h3>ERROR <span class='print_error_number'>404</span> PAGE!</h1>";
+      wnd.dispatchEvent(new Event("onpageload"));
     },
   },
   {
@@ -51,6 +57,8 @@ var appItems = [
       document.getElementById(
         "app"
       ).innerHTML += `<img src="https://raw.githubusercontent.com/MyUserNameIsMyUserName/A-O_documentation_maker/fukinMASTER/SOURCE/static/assets/img/logo.png" alt="app_logo className-img" width="360" height="360" style='transform: rotate3d(2, -1, -1, -0.2turn);'/>`;
+      document.getElementById("app").innerHTML +=
+        "<h5>ERROR <span class='print_error_number'>404</span> PAGE!</h1>";
     },
   },
 ];

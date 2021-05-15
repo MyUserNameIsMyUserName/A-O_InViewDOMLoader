@@ -10,6 +10,15 @@
 // Usage.
 var appItems = [
   {
+    className: "html",
+    done: false,
+    call() {
+      console.log("htmlFunction();");
+      document.head.title = "Welcome Homepage - Slavko V. [_/^\\_] ";
+      document.head.innerHTML += `<link rel="preload" as="image" href="https://raw.githubusercontent.com/MyUserNameIsMyUserName/A-O_documentation_maker/fukinMASTER/SOURCE/static/assets/img/logo.png">`;
+    },
+  },
+  {
     className: "body",
     done: false,
     call() {
@@ -23,16 +32,10 @@ var appItems = [
     done: false,
     call() {
       console.log("appFunction();");
-      document.getElementById("app").innerHTML = "<h1>DOCUMENTATION!</h1>";
-    },
-  },
-  {
-    className: "html",
-    done: false,
-    call() {
-      console.log("htmlFunction();");
-      document.head.innerHTML += '<link rel="preload" as="image" href="/assets/img/logo.png">';
-      document.head.innerHTML += '<link rel="preload" as="image" href="/assets/img/logo.webp">';
+      document.getElementById("app").innerHTML = "<h1>Welcome and have fun!</h1>";
+      document.getElementById("app").innerHTML += `<img src="https://raw.githubusercontent.com/MyUserNameIsMyUserName/A-O_documentation_maker/fukinMASTER/SOURCE/static/assets/img/logo.png" alt="app_logo className-h1" width="360" height="360" />`;
+      document.getElementById("app").innerHTML += "<h2>Welcome and have fun!</h2>";
+      wnd.dispatchEvent(new Event("onpageload"));
     },
   },
   {
@@ -40,11 +43,8 @@ var appItems = [
     done: false,
     call() {
       console.log("titleFunction();");
-      document.getElementById("app").innerHTML +=  `<picture width="360" height="360" >
-                                                        <source type="image/webp" srcset="/assets/img/logo.webp">
-                                                        <source type="image/png" srcset="/assets/img/logo.png">
-                                                        <img src="/assets/img/logo.png" alt="app_logo">
-                                                    </picture>`;
+      document.getElementById("app").innerHTML += `<img src="https://raw.githubusercontent.com/MyUserNameIsMyUserName/A-O_documentation_maker/fukinMASTER/SOURCE/static/assets/img/logo.png" alt="app_logo className-h1" width="360" height="360" />`;
+      document.getElementById("app").innerHTML += "<h2>Welcome and have fun!</h2>";
     },
   },
   {
@@ -52,11 +52,15 @@ var appItems = [
     done: false,
     call() {
       console.log("imgFunction();");
+      document.getElementById(
+        "app"
+      ).innerHTML += `<img src="https://raw.githubusercontent.com/MyUserNameIsMyUserName/A-O_documentation_maker/fukinMASTER/SOURCE/static/assets/img/logo.png" alt="app_logo className-img" width="360" height="360" style='transform: rotate3d(2, -1, -1, -0.2turn);'/>`;
+      document.getElementById("app").innerHTML += "<h3>Welcome and have fun!</h3>";
+      document.getElementById("app").innerHTML += "<h4>Welcome and have fun!</h4>";
+      document.getElementById("app").innerHTML += "<h5>Welcome and have fun!</h5>";
     },
   },
 ];
-
-
 
 //▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 //▌   ! END OF FILE !            ▐▀▀▀         ▐▀▀▀             ! END OF FILE !    ▐
