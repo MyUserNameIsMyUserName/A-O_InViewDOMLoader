@@ -59,5 +59,12 @@ This section provides more inside view on developer process, available thing to 
 ## Additional dev notes
 
 ### Naming:
-1. **_!\_** << When found as folder/file prefix means that thing is still not ready for a full run. Why may be answered somewhere but in essence those exist in prebuilds to give people idea of some directions to take...not forcing the strict follow cuz I too wanna soo something impressive.   
+1. Prefixing <+++>______.\_\_
+   1. **_!\_** << When found as folder/file prefix means that thing is still not ready for a full run. Why may be answered somewhere but in essence those exist in prebuilds to give people idea of some directions to take...not forcing the strict follow cuz I too wanna soo something impressive.   
   
+
+1. Sufixing ______.\_\_.<+++>  
+   1. **_O**  << Finding suffixed files and folders with _O means they are OLD versions but for some reason still exist in there...  
+   
+           [ NOTE: These files might be in use somehwere inthe system, deleting them in not recomendable.]
+

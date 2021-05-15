@@ -10,12 +10,26 @@
 // Usage.
 var appItems = [
   {
+    className: "html",
+    done: false,
+    call() {
+      console.log("htmlFunction();");
+      document.head.title = "Welcome Homepage - Slavko V. [_/^\\_] ";
+      document.head.innerHTML += `<link rel="preload" as="image" href="/assets/img/morty.png">`;
+    },
+  },
+  {
     className: "body",
     done: false,
     call() {
       console.log("bodyFunction();");
       var helper = document.body.innerHTML;
-      document.body.innerHTML = '<div id="app"></div>' + helper;
+      document.body.innerHTML = `<div id="app"><h1>Welcome and have fun!</h1>
+                                                  <h2>Welcome and have fun!</h2>
+                                                  <img src="/assets/img/morty.png" alt="app_logo" width="660" height="" />
+                                                  <img src="https://raw.githubusercontent.com/MyUserNameIsMyUserName/A-O_documentation_maker/fukinMASTER/SOURCE/static/assets/img/logo.png" alt="app_logo" width="360" height="360" />
+                                                  <img src="https://raw.githubusercontent.com/MyUserNameIsMyUserName/A-O_documentation_maker/fukinMASTER/SOURCE/static/assets/img/logo.png" alt="app_logo" width="360" height="360" />
+                                                  </div>` + helper;
     },
   },
   {
@@ -23,16 +37,7 @@ var appItems = [
     done: false,
     call() {
       console.log("appFunction();");
-      document.getElementById("app").innerHTML = "<h1>ERROR <span class='print_error_number'>404</span> PAGE!</h1>";
-    },
-  },
-  {
-    className: "html",
-    done: false,
-    call() {
-      console.log("htmlFunction();");
-      document.head.title = "404 page not found - Slavko V. [_/^\\_] ";
-      document.head.innerHTML += `<link rel="preload" as="image" href="https://raw.githubusercontent.com/MyUserNameIsMyUserName/A-O_documentation_maker/fukinMASTER/SOURCE/static/assets/img/logo.png">`;
+      wnd.dispatchEvent(new Event("onpageload"));
     },
   },
   {
@@ -40,8 +45,11 @@ var appItems = [
     done: false,
     call() {
       console.log("titleFunction();");
-      document.getElementById("app").innerHTML += `<img src="https://raw.githubusercontent.com/MyUserNameIsMyUserName/A-O_documentation_maker/fukinMASTER/SOURCE/static/assets/img/logo.png" alt="app_logo className-h1" width="360" height="360" />`;
-      document.getElementById("app").innerHTML += "<h3>ERROR <span class='print_error_number'>404</span> PAGE!</h1>";
+      document.getElementById(
+        "app"
+      ).innerHTML += `<img src="https://raw.githubusercontent.com/MyUserNameIsMyUserName/A-O_documentation_maker/fukinMASTER/SOURCE/static/assets/img/logo.png" alt="app_logo className-h1" width="360" height="360" />`;
+      document.getElementById("app").innerHTML +=
+        "<h2>Welcome and have fun!</h2>";
     },
   },
   {
@@ -49,8 +57,15 @@ var appItems = [
     done: false,
     call() {
       console.log("imgFunction();");
-      document.getElementById("app").innerHTML += `<img src="https://raw.githubusercontent.com/MyUserNameIsMyUserName/A-O_documentation_maker/fukinMASTER/SOURCE/static/assets/img/logo.png" alt="app_logo className-img" width="360" height="360" style='transform: rotate3d(2, -1, -1, -0.2turn);'/>`;
-      document.getElementById("app").innerHTML += "<h5>ERROR <span class='print_error_number'>404</span> PAGE!</h1>";
+      document.getElementById(
+        "app"
+      ).innerHTML += `<img src="https://raw.githubusercontent.com/MyUserNameIsMyUserName/A-O_documentation_maker/fukinMASTER/SOURCE/static/assets/img/logo.png" alt="app_logo className-img" width="360" height="360" style='transform: rotate3d(2, -1, -1, -0.2turn);'/>`;
+      document.getElementById("app").innerHTML +=
+        "<h3>Welcome and have fun!</h3>";
+      document.getElementById("app").innerHTML +=
+        "<h4>Welcome and have fun!</h4>";
+      document.getElementById("app").innerHTML +=
+        "<h5>Welcome and have fun!</h5>";
     },
   },
 ];
