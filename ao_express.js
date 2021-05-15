@@ -27,6 +27,6 @@ app.get("*", function (req, res) {
 });
 
 // Start server
-app.listen(PORT, function () {
+app.listen(LOCAL_PORT, function () {
     console.log("Server up and running on " + LOCAL_PROTOCOL + "://" + LOCAL_HOST + ":" + LOCAL_PORT + "/");
 });
