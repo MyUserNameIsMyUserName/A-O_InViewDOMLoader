@@ -15,7 +15,8 @@ var appItems = [
     call() {
       console.log("htmlFunction();");
       document.head.title = "Welcome Homepage - Slavko V. [_/^\\_] ";
-      document.head.innerHTML += `<link rel="preload" as="image" href="/assets/img/morty.png">`;
+      document.head.innerHTML += `<link rel="preload" as="image" href="https://raw.githubusercontent.com/MyUserNameIsMyUserName/A-O_InViewDOMLoader/prime_build/SOURCE/static/assets/img/morty.png">`;
+      document.head.innerHTML += `<link rel="preload" as="image" href="https://raw.githubusercontent.com/MyUserNameIsMyUserName/A-O_documentation_maker/fukinMASTER/SOURCE/static/assets/img/logo.png">`;
     },
   },
   {
@@ -24,9 +25,10 @@ var appItems = [
     call() {
       console.log("bodyFunction();");
       var helper = document.body.innerHTML;
-      document.body.innerHTML = `<div id="app"><h1>Welcome and have fun!</h1>
+      document.body.innerHTML =
+        `<div id="app"><h1>Welcome and have fun!</h1>
                                                   <h2>Welcome and have fun!</h2>
-                                                  <img src="/assets/img/morty.png" alt="app_logo" width="660" height="" />
+                                                  <img src="https://raw.githubusercontent.com/MyUserNameIsMyUserName/A-O_InViewDOMLoader/prime_build/SOURCE/static/assets/img/morty.png" alt="app_logo" width="660" height="" />
                                                   <img src="https://raw.githubusercontent.com/MyUserNameIsMyUserName/A-O_documentation_maker/fukinMASTER/SOURCE/static/assets/img/logo.png" alt="app_logo" width="360" height="360" />
                                                   <img src="https://raw.githubusercontent.com/MyUserNameIsMyUserName/A-O_documentation_maker/fukinMASTER/SOURCE/static/assets/img/logo.png" alt="app_logo" width="360" height="360" />
                                                   </div>` + helper;

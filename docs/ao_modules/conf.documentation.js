@@ -1,5 +1,0 @@
-var appItems=[{className:"body",done:!1,call(){console.log("bodyFunction();");var a=document.body.innerHTML;document.body.innerHTML="<div id=\"app\"></div>"+a}},{className:"#app",done:!1,call(){console.log("appFunction();"),document.getElementById("app").innerHTML="<h1>DOCUMENTATION!</h1>"}},{className:"html",done:!1,call(){console.log("htmlFunction();"),document.head.innerHTML+="<link rel=\"preload\" as=\"image\" href=\"/assets/img/logo.png\">",document.head.innerHTML+="<link rel=\"preload\" as=\"image\" href=\"/assets/img/logo.webp\">"}},{className:"h1",done:!1,call(){console.log("titleFunction();"),document.getElementById("app").innerHTML+=`<picture width="360" height="360" >
-                                                        <source type="image/webp" srcset="/assets/img/logo.webp">
-                                                        <source type="image/png" srcset="/assets/img/logo.png">
-                                                        <img src="/assets/img/logo.png" alt="app_logo">
-                                                    </picture>`}},{className:"img",done:!1,call(){console.log("imgFunction();")}}];
