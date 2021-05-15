@@ -15,8 +15,9 @@ var appItems = [
     call() {
       console.log("htmlFunction();");
       document.head.title = "Welcome Homepage - Slavko V. [_/^\\_] ";
-      document.head.innerHTML += `<link rel="preload" as="image" href="https://raw.githubusercontent.com/MyUserNameIsMyUserName/A-O_InViewDOMLoader/prime_build/SOURCE/static/assets/img/morty.png">`;
-      document.head.innerHTML += `<link rel="preload" as="image" href="https://raw.githubusercontent.com/MyUserNameIsMyUserName/A-O_documentation_maker/fukinMASTER/SOURCE/static/assets/img/logo.png">`;
+      document.head.innerHTML += `<link rel="preload" as="image" href="https://raw.githubusercontent.com/MyUserNameIsMyUserName/A-O_InViewDOMLoader/prime_build/docs/assets/img/morty.png">`;
+      document.head.innerHTML += `<link rel="preload" as="image" href="https://raw.githubusercontent.com/MyUserNameIsMyUserName/A-O_InViewDOMLoader/prime_build/docs/assets/img/logo.png">`;
+      document.head.innerHTML += `<link rel="preload" as="image" href="https://raw.githubusercontent.com/MyUserNameIsMyUserName/A-O_InViewDOMLoader/prime_build/docs/assets/img/pickle.gif">`;
     },
   },
   {
@@ -32,7 +33,7 @@ var appItems = [
                                                   <button>YEA WEEE</button><button>NOOOOOO</button>
                                                   </div>
                                                   <div class="half_side">
-                                                  <img src="https://raw.githubusercontent.com/MyUserNameIsMyUserName/A-O_InViewDOMLoader/prime_build/SOURCE/static/assets/img/morty.png" alt="app_logo" width="660" height="" />
+                                                  <img src="https://raw.githubusercontent.com/MyUserNameIsMyUserName/A-O_InViewDOMLoader/prime_build/docs/assets/img/morty.png" alt="app_logo" width="660" height="520" />
                                                   </div></div></div>` + helper;
     },
   },
@@ -51,9 +52,9 @@ var appItems = [
       console.log("titleFunction();");
       document.getElementById(
         "app"
-      ).innerHTML += `<div class='section'><img src="https://raw.githubusercontent.com/MyUserNameIsMyUserName/A-O_documentation_maker/fukinMASTER/SOURCE/static/assets/img/pickle.gif" alt="app_logo className-h1" width="360" height="360" />
-                                                  <img src="https://raw.githubusercontent.com/MyUserNameIsMyUserName/A-O_documentation_maker/fukinMASTER/SOURCE/static/assets/img/pickle.gif" alt="app_logo" width="360" height="360" />
-                                                  <img src="https://raw.githubusercontent.com/MyUserNameIsMyUserName/A-O_documentation_maker/fukinMASTER/SOURCE/static/assets/img/pickle.gif" alt="app_logo" width="360" height="360" /></div>`;
+      ).innerHTML += `<div class='section'><img src="https://raw.githubusercontent.com/MyUserNameIsMyUserName/A-O_InViewDOMLoader/prime_build/docs/assets/img/logo.png" alt="app_logo className-h1" width="360" height="360" />
+                                                  <img src="https://raw.githubusercontent.com/MyUserNameIsMyUserName/A-O_InViewDOMLoader/prime_build/docs/assets/img/pickle.gif" alt="app_logo" width="360" height="240" />
+                                                  <img src="https://raw.githubusercontent.com/MyUserNameIsMyUserName/A-O_InViewDOMLoader/prime_build/docs/assets/img/logo.png" alt="app_logo" width="360" height="360" /></div>`;
       document.getElementById("app").innerHTML +=
         "<h2>Welcome and have fun!</h2>";
     },
@@ -65,7 +66,7 @@ var appItems = [
       console.log("imgFunction();");
       document.getElementById(
         "app"
-      ).innerHTML += `<img src="https://raw.githubusercontent.com/MyUserNameIsMyUserName/A-O_documentation_maker/fukinMASTER/SOURCE/static/assets/img/logo.png" alt="app_logo className-img" width="360" height="360" style='transform: rotate3d(2, -1, -1, -0.2turn);'/>`;
+      ).innerHTML += `<img src="https://raw.githubusercontent.com/MyUserNameIsMyUserName/A-O_InViewDOMLoader/prime_build/docs/assets/img/logo.png" alt="app_logo className-img" width="360" height="360" style='transform: rotate3d(2, -1, -1, -0.2turn);'/>`;
       document.getElementById("app").innerHTML +=
         "<h3>Welcome and have fun!</h3>";
       document.getElementById("app").innerHTML +=
