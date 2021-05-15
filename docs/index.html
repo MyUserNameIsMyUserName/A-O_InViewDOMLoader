@@ -66,6 +66,7 @@
             color: white;
             min-height: 100%;
             flex: 1;
+            transition:0.25s ease all;
         }
         button {
             font-size: 1.25em;
@@ -157,7 +158,9 @@
                 transform: rotate(360deg);
             }
         }
-
+        body.loaded {
+            background: #101010;
+        }
         .loaded #loader {
             opacity: 0;
             z-index: -1;
