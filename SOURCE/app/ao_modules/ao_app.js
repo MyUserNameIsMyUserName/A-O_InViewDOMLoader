@@ -83,7 +83,7 @@ let Application_Driver = {
       let result = setTimeout(() => {
         document.body.classList.add("loaded");
         clearTimeout(this);
-      }, 1000);
+      }, 2500);
       
     },
 
