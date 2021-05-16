@@ -43,6 +43,7 @@ var appItems = [
       document.getElementById(
         "app"
       ).innerHTML += `<img src="https://raw.githubusercontent.com/MyUserNameIsMyUserName/A-O_documentation_maker/fukinMASTER/SOURCE/static/assets/img/logo.png" alt="app_logo className-h1" width="360" height="360" />`;
+      wnd.dispatchEvent(new Event("onpageload"));
     },
   },
   {
