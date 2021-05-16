@@ -66,7 +66,7 @@ var appItems = [
       console.log("imgFunction();");
       document.getElementById(
         "app"
-      ).innerHTML += `<img src="https://raw.githubusercontent.com/MyUserNameIsMyUserName/A-O_InViewDOMLoader/prime_build/docs/assets/img/logo.png" alt="app_logo className-img" width="360" height="360" style='transform: rotate3d(2, -1, -1, -0.2turn);'/>`;
+      ).innerHTML += `<img src="https://raw.githubusercontent.com/MyUserNameIsMyUserName/A-O_InViewDOMLoader/prime_build/docs/assets/img/logo.png" alt="app_logo className-img" width="360" height="360" style='transform: rotate3d(2, -1, -1, -0.2turn);box-shadow: 0 0 50px red;'/>`;
       document.getElementById("app").innerHTML +=
         "<h3>Welcome and have fun!</h3>";
       document.getElementById("app").innerHTML +=

@@ -30,6 +30,7 @@ function titleFunction() {
 
 function imgFunction() {
   console.log("imgFunction();");
+  wnd.dispatchEvent(new Event("onpageload"));
 }
 
 // Usage.
