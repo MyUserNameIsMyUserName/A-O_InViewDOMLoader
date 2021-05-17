@@ -21,10 +21,9 @@ let Application_Driver = {
       },
     },
     location: {
-      local: "http://localhost:8080",
-      tunnel_url: "https://e681c0920364.ngrok.io",
-      git_docs_url:
-        "https://myusernameismyusername.github.io/A-O_InViewDOMLoader/",
+      local: "http://localhost:7744",
+      tunnel_url: "https://2c0492166a7d.ngrok.io",
+      git_docs_url: "https://myusernameismyusername.github.io/A-O_InViewDOMLoader/",
       current_origin: null,
     },
     elems: {
@@ -46,7 +45,7 @@ let Application_Driver = {
       var newScript = document.createElement("script");
       newScript.onerror = this.loadError;
       if (onloadFunction) {
-        newScript.onload =  onloadFunction;
+        newScript.onload = onloadFunction;
       }
       Application_Driver.config.elems.pageScripts.appendChild(newScript);
       newScript.src = url;
@@ -60,14 +59,14 @@ let Application_Driver = {
     loadStyle(url) {
       var shouldAddNew = true;
       var styles = document.querySelectorAll("link");
-      styles.forEach(styleElem => {
-        console.log(styleElem.getAttribute('href'));
-        if (url == styleElem.getAttribute('href')) {
-          console.log("Skipping new style : " + url +" ; Already present!");
+      styles.forEach((styleElem) => {
+        console.log(styleElem.getAttribute("href"));
+        if (url == styleElem.getAttribute("href")) {
+          console.log("Skipping new style : " + url + " ; Already present!");
           shouldAddNew = false;
         }
       });
-      
+
       if (shouldAddNew) {
         console.log("Adding new style :" + url);
         var newStyle = document.createElement("link");
@@ -84,13 +83,12 @@ let Application_Driver = {
         document.body.classList.add("loaded");
         clearTimeout(this);
       }, 2500);
-      
     },
 
     startLoading() {
       console.info("startLoading()");
-      if (document.getElementById('app')){
-        document.getElementById('app').remove();
+      if (document.getElementById("app")) {
+        document.getElementById("app").remove();
       }
       document.body.classList.remove("loaded");
     },
@@ -142,7 +140,6 @@ let Application_Driver = {
         //Application_Driver.func.finishLoading();
       });
 
-      
       this.loadStyle("/assets/css/modal.css");
       this.loadStyle("/assets/css/demo.css");
 

@@ -29,7 +29,7 @@ var appItems = [
       document.body.innerHTML =
         `<div id="app"><div class='section'><div class="half_side"><h1>Look morty!</h1>
                                                   <h2>"Look Who's Purging Now!"</h2>
-                                                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Diam sit amet nisl suscipit adipiscing. Enim nulla aliquet porttitor lacus luctus. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Diam sit amet nisl suscipit adipiscing. Enim nulla aliquet porttitor lacus luctus.</p>
+                                                  <p> https://698b218380af.ngrok.io  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Diam sit amet nisl suscipit adipiscing. Enim nulla aliquet porttitor lacus luctus. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Diam sit amet nisl suscipit adipiscing. Enim nulla aliquet porttitor lacus luctus.</p>
                                                   <button>YEA WEEE</button><button>NOOOOOO</button>
                                                   </div>
                                                   <div class="half_side">

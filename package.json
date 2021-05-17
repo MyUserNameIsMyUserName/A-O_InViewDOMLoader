@@ -19,7 +19,8 @@
     "bsd_": "  npm run _serve && nodemon --exec npm run _build_dev --ignore PUBLIC",
     "_local_tunnel": "npm run ao && start lt --port 8888",
     "lt_": "npm run _local_tunnel",
-    "_dist": "  start bash -c \" bash -c 'npm run in_' ; bash -c 'npm run b_' ; bash -c 'rm -rf dist' ; bash -c 'mkdir dist' ; bash -c 'cp ./PUBLIC/ssosl.js ./dist/ssosl.min.js ' ;  \""
+    "_dist": "  start bash -c \" bash -c 'npm run in_' ; bash -c 'npm run b_' ; bash -c 'rm -rf dist' ; bash -c 'mkdir dist' ; bash -c 'cp ./PUBLIC/ssosl.js ./dist/ssosl.min.js ' ;  \"",
+    "stop_ngrok_tunnel":"bash -c \" taskkill -f -im ngrok.exe \" "
   },
   "repository": {
     "type": "git",
