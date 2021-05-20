@@ -22,7 +22,7 @@ let Application_Driver = {
     },
     location: {
       local: "http://localhost:7744",
-      tunnel_url: "https://2c0492166a7d.ngrok.io",
+      tunnel_url: "https://c4457c1e7189.ngrok.io",
       git_docs_url: "https://myusernameismyusername.github.io/A-O_InViewDOMLoader/",
       current_origin: null,
     },
@@ -135,10 +135,12 @@ let Application_Driver = {
     },
 
     loadReq() {
-      this.loadScript("/modules/ao_router/ao_router.js", function () {
+      //this.loadScript("/modules/ao_router_v2/appRoutes.virgil.js");
+      this.loadScript("/modules/ao_router_v2/virgil_router.js", function () { Virgil.init(); });
+      /*this.loadScript("/modules/ao_router/ao_router.js", function () {
         findCurrentRoute();
         //Application_Driver.func.finishLoading();
-      });
+      });*/
 
       this.loadStyle("/assets/css/modal.css");
       this.loadStyle("/assets/css/demo.css");
