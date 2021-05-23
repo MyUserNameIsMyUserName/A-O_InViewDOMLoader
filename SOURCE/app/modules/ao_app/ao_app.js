@@ -13,8 +13,11 @@ let ao_app = {
             email: "slavko.vuletic92@gmail.com"
         },
     },
+    elems : {
+        appElem : null
+    },
     config : {
-        appElemID = null
+        appElemID : null
     },
     data: {},
     meth: {},
@@ -24,6 +27,7 @@ let ao_app = {
             return false;
         } 
         this.config = conf;
+        console.log(this);
         return true;
     }
 };
