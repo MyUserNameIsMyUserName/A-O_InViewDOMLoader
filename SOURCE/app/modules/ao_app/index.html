@@ -6,6 +6,19 @@
     <title>A^O_APP</title>
 </head>
 <body>
-    <h1>A^O_APPLICATION</h1>
+    <div id="ao_app_elem">
+    </div>
+
+    <script src="./ao_app.js"></script>
+
+    <script>
+        var testConfig = {
+            debug : false,
+            appElemId   : "ao_app_elem"
+        }
+
+        ao_app.init(testConfig);
+    </script>
+
 </body>
 </html>
