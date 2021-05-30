@@ -2,7 +2,7 @@
 // ao_app.js
 'use strict';
 
-let ao_app = {
+const AO_APP = {
     info : {
         name: "A^O_Application Driver Module",
         description: "A^O_Application Driver Module",
@@ -32,5 +32,5 @@ let ao_app = {
     }
 };
 
-
+console.log(AO_APP);
 console.log('+- ao_app.js file done -+');
