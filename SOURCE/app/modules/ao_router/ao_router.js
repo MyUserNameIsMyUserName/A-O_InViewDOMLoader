@@ -28,6 +28,19 @@ const appPathways = {
       }
     },
     {
+      path: "/sample",
+      alt_path: ["/demo", "/demo_page", "/demo-page", "/sample_page", "/sample-page", "/example", "/example_page", "/example-page" ],
+      page: "/pages/about",
+      pageInfo: {
+        page_title: "SAMPLE/EXAMPLE Page - <[-V-]> Slavko V.",
+        page_descr: "SAMPLE/EXAMPLE PageSAMPLE/EXAMPLE PageSAMPLE/EXAMPLE PageSAMPLE/EXAMPLE PageSAMPLE/EXAMPLE PageSAMPLE/EXAMPLE Page",
+        page_keywords: "Sample Page, Sample File, Example, Example File, Example Page, Demo, Demo Page, Demo File ",
+        logo_base_img: "/assets/img/logo.png",
+        logo_alt_img: "https://raw.githubusercontent.com/MyUserNameIsMyUserName/A-O_documentation_maker/fukinMASTER/SOURCE/static/assets/img/logo.png",
+        page_slogan: "NjaNjaNjaaaNjaa NJa nja nja..... https://www.youtube.com/watch?v=j8zRlLHheb0 "
+      }
+    },
+    {
       path: "/contact",
       alt_path: ["/contact_me", "/contact-me", "/send_msg", "/message_me", "/message-me", "/message", "/make_contact", "/make-contact", "/send_war_pigeon", "/send-war-pigeon", "/run_boy_run", "/run-boy-run" ],
       page: "/pages/contact",

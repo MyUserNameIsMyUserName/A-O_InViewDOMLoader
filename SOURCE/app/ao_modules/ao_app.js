@@ -21,7 +21,7 @@ let Application_Driver = {
       },
     },
     location: {
-      local: "http://localhost:8080",
+      local: "http://localhost:7744",
       tunnel_url: "https://e681c0920364.ngrok.io",
       git_docs_url:
         "https://myusernameismyusername.github.io/A-O_InViewDOMLoader/",
