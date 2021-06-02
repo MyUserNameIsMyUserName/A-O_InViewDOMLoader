@@ -93,6 +93,7 @@ const page_home = {
       data: {
         title: "4444444 SECTION 3333 TITLE",
         subtitle: "44444S3pace3 hold3e3r3 33for subtit3e..3..",
+        text: "qw qwasasxcs qw eqwdsa daw qewdwaswd asw aqsdas dwaqedasdw   waasdcsad was w adsd aw sdeaqsd asw asdad asd",
         button: {
           text: "Joi3n Today3!",
           style: {
@@ -174,6 +175,7 @@ const page_home = {
       data: {
         title: "77777777777 SECTION 3333 TITLE",
         subtitle: "7777777777 hold3e3r3 33for subtit3e..3..",
+        text: "qw qwasasxcs qw eqwdsa daw qewdwaswd asw aqsdas dwaqedasdw   waasdcsad was w adsd aw sdeaqsd asw asdad asd",
         button: {
           text: "Joi3n Today3!",
           style: {
@@ -201,6 +203,7 @@ const page_home = {
       data: {
         title: "888888 SECTION 3333 TITLE",
         subtitle: "88888 hold3e3r3 33for subtit3e..3..",
+        text: "qw qwasasxcs qw eqwdsa daw qewdwaswd asw aqsdas dwaqedasdw   waasdcsad was w adsd aw sdeaqsd asw asdad asd",
         button: {
           text: "Joi3n Today3!",
           style: {
@@ -228,6 +231,7 @@ const page_home = {
       data: {
         title: "9999999 SECTION 3333 TITLE",
         subtitle: "99999999 hold3e3r3 33for subtit3e..3..",
+        text: "qw qwasasxcs qw eqwdsa daw qewdwaswd asw aqsdas dwaqedasdw   waasdcsad was w adsd aw sdeaqsd asw asdad asd",
         button: {
           text: "Joi3n Today3!",
           style: {
@@ -255,6 +259,7 @@ const page_home = {
       data: {
         title: "10 SECTION 3333 TITLE",
         subtitle: "10 hold3e3r3 33for subtit3e..3..",
+        text: "qw qwasasxcs qw eqwdsa daw qewdwaswd asw aqsdas dwaqedasdw   waasdcsad was w adsd aw sdeaqsd asw asdad asd",
         button: {
           text: "Joi3n Today3!",
           style: {
@@ -282,6 +287,7 @@ const page_home = {
       data: {
         title: "YYYYYYYYY SECTION 3333 TITLE",
         subtitle: "YYYYYYYYYYY hold3e3r3 33for subtit3e..3..",
+        text: "qw qwasasxcs qw eqwdsa daw qewdwaswd asw aqsdas dwaqedasdw   waasdcsad was w adsd aw sdeaqsd asw asdad asd",
         button: {
           text: "YYYYYY Today3!",
           style: {
@@ -309,6 +315,7 @@ const page_home = {
       data: {
         title: "ZZZZZZZZZZZZZ SECTION 3333 TITLE",
         subtitle: "ZZZZZZZZZZ hold3e3r3 33for subtit3e..3..",
+        text: "qw qwasasxcs qw eqwdsa daw qewdwaswd asw aqsdas dwaqedasdw   waasdcsad was w adsd aw sdeaqsd asw asdad asd",
         button: {
           text: "Joi3n Today3!",
           style: {

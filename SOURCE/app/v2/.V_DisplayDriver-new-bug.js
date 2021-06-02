@@ -173,11 +173,8 @@ const AO_DD = {
       section.lastUpdate = 0;
 
       if (stopPrint === false) {
-        section.render = V_DomP(section);
-        section.timeOfRender = Date.now();
-        console.log(section.render);
+        aoDisplay.renderSection(section);
         document.getElementById(uid).innerHTML = section.render;
-        section.lastUpdate = Date.now();
         console.log("EEEE #" + uid)
         if (!aoDisplay.isInUserView("#" + uid)) {
           stopPrint = true;
@@ -186,6 +183,12 @@ const AO_DD = {
       }
     })
   },
+  renderSection(section) {
+    section.render = V_DomP(section);
+    section.timeOfRender = Date.now();
+    section.lastUpdate = Date.now();
+    console.log(section.render);
+  },
   init(page = null) {
     console.log('FunctionCall >> [ function initSSOSL() ]');
     try {
@@ -193,7 +196,7 @@ const AO_DD = {
       this.doc = document;
       this.listenForEvents();
       // requestAnimationFrame
-      this.raf = this.wnd.requestAnimationFrame || this.wnd.webkitRequestAnimationFrame || this.wnd.mozRequestAnimationFrame || function(callback) { this.wnd.setTimeout(callback, 1000 / 60); };
+      this.raf(callback) = this.wnd.requestAnimationFrame || this.wnd.webkitRequestAnimationFrame || this.wnd.mozRequestAnimationFrame || function(callback) { this.wnd.setTimeout(callback, 1000 / 60); };
       this.wnd.addEventListener("load", this.handler);
       this.wnd.addEventListener("scroll", this.handler);
       //this.handler();

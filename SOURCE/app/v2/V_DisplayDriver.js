@@ -1,3 +1,13 @@
+// requestAnimationFrame
+var raf =
+  window.requestAnimationFrame ||
+  window.webkitRequestAnimationFrame ||
+  window.mozRequestAnimationFrame ||
+  function(callback) {
+    window.setTimeout(callback, 1000 / 60);
+  };
+
+
 // AO_DD <=> AO_DisplayDriver => aoDisplay |:|
 const AO_DD = {
   doc: "",
@@ -69,22 +79,32 @@ const AO_DD = {
   },
   looper() {
     //console.log('yea...scrolling')
+    //this.init();
     var notYetDone = 0;
-    var testItems = this.data.page.sections;
+    var testItems = aoDisplay.data.page.sections;
     //console.log(testItems)
     if (typeof testItems !== "undefined") {
       if (testItems.length > 0) {
         testItems.forEach((element) => {
-          if (this.isInUserView('#' + element.elemID)) {
+          var helpElem = document.getElementById(element.elemID);
+          if (aoDisplay.isInUserView('#' + element.elemID)) {
             if (!element.done) {
               //console.log('Is ' + element.elemID + ' visible? YES')
               //element.call();
-              document.getElementById(element.elemID).innerHTML = V_DomP(element);
-              element.done = true;
+              if ((typeof element.render === 'undefined') || (element.lastUpdate > element.timeOfRender)) {
+                element.render = V_DomP(element);
+                element.timeOfRender = Date.now();
+                helpElem.innerHTML = element.render;
+                helpElem.style.minHeight = helpElem.clientHeight + "px";
+                element.done = true;
+              } else {
+                helpElem.innerHTML = element.render;
+                element.done = true;
+              }
             }
           } else {
             element.done = false;
-            document.getElementById(element.elemID).innerHTML = "";
+            helpElem.innerHTML = "";
             //console.log('Is ' + element.elemID + ' visible? NO')
             notYetDone++;
           }
@@ -97,8 +117,10 @@ const AO_DD = {
       this.wnd.removeEventListener("scroll", this.handler);
     };
   },
+  // requestAnimationFrame
   handler() {
-    this.raf(aoDisplay.looper());
+    //console.log(this.raf);
+    raf(aoDisplay.looper);
   },
   loadPage() {
     this.canPrintPage();
@@ -123,6 +145,7 @@ const AO_DD = {
         top: boundsTop,
         bottom: boundsTop + elem.clientHeight,
       };
+
 
       return (bounds.bottom >= viewport.top && bounds.bottom <= viewport.bottom) ||
         (bounds.top <= viewport.bottom && bounds.top >= viewport.top);
@@ -165,11 +188,19 @@ const AO_DD = {
       this.doc.body.innerHTML += `<div id="${uid}" class="page_section ${section.type}"></div>`;
 
       section.elemID = uid;
+      section.lastUpdate = Date.now();
+      section.timeOfRender = 0;
 
       if (stopPrint === false) {
-        var helpSec = V_DomP(section);
-        console.log(helpSec);
-        document.getElementById(uid).innerHTML = helpSec;
+
+        section.render = V_DomP(section);
+        document.getElementById(uid).innerHTML = section.render;
+
+        console.log(document.getElementById(uid).clientHeight)
+
+        document.getElementById(uid).style.minHeight = document.getElementById(uid).clientHeight + "px";
+        section.timeOfRender = Date.now();
+        console.log(section.render);
         console.log("EEEE #" + uid)
         if (!aoDisplay.isInUserView("#" + uid)) {
           stopPrint = true;
@@ -183,12 +214,14 @@ const AO_DD = {
     try {
       this.wnd = window;
       this.doc = document;
-      this.listenForEvents();
-      this.wnd.addEventListener("load", this.handler);
-      this.wnd.addEventListener("scroll", this.handler);
+
       // requestAnimationFrame
-      this.raf = this.wnd.requestAnimationFrame || this.wnd.webkitRequestAnimationFrame || this.wnd.mozRequestAnimationFrame || function(callback) { this.wnd.setTimeout(callback, 1000 / 60); };
+      //this.raf = this.wnd.requestAnimationFrame || this.wnd.webkitRequestAnimationFrame || this.wnd.mozRequestAnimationFrame || function(callback) { this.wnd.setTimeout(callback, 1000 / 60); };
+
       //this.handler();
+      this.listenForEvents();
+      this.wnd.addEventListener("load", aoDisplay.handler);
+      this.wnd.addEventListener("scroll", aoDisplay.handler);
     } catch (error) {
       console.error(error);
     }
