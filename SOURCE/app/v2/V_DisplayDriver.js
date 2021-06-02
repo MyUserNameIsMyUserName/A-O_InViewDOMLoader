@@ -22,6 +22,7 @@ const AO_DD = {
   set page(page = null) {
     this.pageInputValidate(page);
     this.data.page = page;
+    this.loadPage();
     console.log(this);
     this.initPrint();
   },
@@ -93,16 +94,38 @@ const AO_DD = {
               //console.log('Is ' + element.elemID + ' visible? YES')
               //element.call();
               if ((typeof element.render === 'undefined') || (element.lastUpdate > element.timeOfRender)) {
-                element.render = V_DomP(element);
+                var result = V_DomP(element);
+                element.render = result.section;
+                if (typeof result.do === 'function') {
+                  element.do = result.do;
+                }
+                if (typeof result.onshow === 'function') {
+                  element.onshow = result.onshow;
+                }
                 element.timeOfRender = Date.now();
                 helpElem.innerHTML = element.render;
-                helpElem.style.minHeight = helpElem.clientHeight + "px";
                 aoDisplay.maybeLoadStyle(element.type);
-                element.done = true;
+
+                if (typeof element.do === 'function') {
+                  element.do();
+                }
+                if (typeof element.onshow === 'function') {
+                  element.onshow();
+                }
+
+
               } else {
                 helpElem.innerHTML = element.render;
-                element.done = true;
+
+              };
+
+              if (typeof element.onshow === "function") {
+                console.log("onshow >> : " + element.elemID);
+                element.onshow();
               }
+
+              helpElem.style.minHeight = helpElem.clientHeight + "px";
+              element.done = true;
             }
           } else {
             element.done = false;
@@ -126,6 +149,7 @@ const AO_DD = {
   },
   loadPage() {
     this.canPrintPage();
+    this.preload();
     var meta = this.data.page.meta;
     var sections = this.data.page.sections;
     console.log(meta);
@@ -173,6 +197,30 @@ const AO_DD = {
       this.init();
     }
   },
+  /*set setOnshow(item = null) {
+    console.log("<< SETONSHOW >>");
+    if (item !== null) {
+      this.data.page.sections.forEach(section => {
+        console.log(section);
+        if (item.uid === section.elemID) {
+          console.log("GOOD << >> SETONSHOW");
+          section.onshow = item.callback;
+        };
+
+      })
+    } else {
+      console.warn('ERROR:>> CALLBACK IS NOT A FUNCTION')
+    }
+  },*/
+  itemHeight(uid = null) {
+
+    if (uid !== null) {
+      console.log(document.getElementById(uid).clientHeight)
+      document.getElementById(uid).style.minHeight = document.getElementById(uid).clientHeight + "px";
+      return true;
+    }
+    return false;
+  },
   initPrint() {
     var stopPrint = false;
     this.data.page.sections.forEach(section => {
@@ -203,15 +251,33 @@ const AO_DD = {
 
       if (stopPrint === false) {
 
-        section.render = V_DomP(section);
+        var result = V_DomP(section);
+        section.render = result.section;
+        if (typeof result.do === 'function') {
+          section.do = result.do;
+        }
+        if (typeof result.onshow === 'function') {
+          section.onshow = result.onshow;
+        }
+        section.render = result.section;
 
         this.maybeLoadStyle(section.type);
 
         document.getElementById(uid).innerHTML = section.render;
 
-        console.log(document.getElementById(uid).clientHeight)
+        if (typeof section.do === 'function') {
+          section.do();
+        }
+        if (typeof section.onshow === 'function') {
+          section.onshow();
+        }
+        //console.log("V_DomD >> : " + uid);
 
-        document.getElementById(uid).style.minHeight = document.getElementById(uid).clientHeight + "px";
+        //section.onshow = V_DomD();
+
+        aoDisplay.itemHeight(uid);
+        section.done = true;
+
         section.timeOfRender = Date.now();
         console.log(section.render);
         console.log("EEEE #" + uid)
@@ -231,7 +297,7 @@ const AO_DD = {
         return false;
       }
       console.log("ADDED STYLE TO ARRAY")
-      document.body.innerHTML += style.style;
+      document.head.innerHTML += style.style;
       return true;
     } else {
       console.warn("ERROR:>> style EMPTY");

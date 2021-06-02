@@ -45,6 +45,21 @@ const page_home = {
       }
     },
     {
+      type: "glide_slider_elem",
+      data: {
+        title: "SECOND SECTION TITLE",
+        subtitle: "22222222Space holder for subtitle....",
+        button: {
+          text: "Join Today!",
+          do: "testCallbackFunction('Join today button alerting!')"
+        },
+        background: {
+          type: "color",
+          url: "#302010"
+        }
+      }
+    },
+    {
       type: "hero_main",
       data: {
         title: "SECOND SECTION TITLE",
@@ -61,7 +76,7 @@ const page_home = {
         },
         background: {
           type: "color",
-          url: "#302010"
+          url: "orange"
         }
       }
     },
@@ -347,7 +362,6 @@ const page_home = {
 
 window.onload = () => {
   aoDisplay.page = page_home;
-  aoDisplay.loadPage();
 }
 
 //▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
