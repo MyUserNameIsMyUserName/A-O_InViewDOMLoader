@@ -33,9 +33,10 @@ const page_home = {
           do: "testCallbackFunction()"
         },
         image: {
-          width: 300,
-          height: 400,
-          url: "/assets/img/logo.png"
+          width: 360,
+          height: 360,
+          url: "/assets/img/logo.png",
+          alt: "YEAAA MIKI"
         },
         background: {
           type: "color",
@@ -53,9 +54,10 @@ const page_home = {
           do: "testCallbackFunction('Join today button alerting!')"
         },
         image: {
-          width: 150,
-          height: 200,
-          url: "/assets/img/logo.png"
+          width: 180,
+          height: 180,
+          url: "/assets/img/logo.png",
+          alt: "MIKI222222"
         },
         background: {
           type: "color",
@@ -80,7 +82,8 @@ const page_home = {
         image: {
           width: 50,
           height: 50,
-          url: "/assets/img/logo.png"
+          url: "/assets/img/logo.png",
+          alt: "YEAAA MIKI"
         },
         background: {
           type: "image",
@@ -162,7 +165,8 @@ const page_home = {
         image: {
           width: 50,
           height: 50,
-          url: "/assets/img/logo.png"
+          url: "/assets/img/logo.png",
+          alt: "YEAAA MIKI"
         },
         background: {
           type: "image",

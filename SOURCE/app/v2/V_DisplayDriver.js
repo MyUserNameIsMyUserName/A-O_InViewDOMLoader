@@ -16,7 +16,8 @@ const AO_DD = {
     debug: true
   },
   data: {
-    page: {}
+    page: {},
+    styles: []
   },
   set page(page = null) {
     this.pageInputValidate(page);
@@ -96,6 +97,7 @@ const AO_DD = {
                 element.timeOfRender = Date.now();
                 helpElem.innerHTML = element.render;
                 helpElem.style.minHeight = helpElem.clientHeight + "px";
+                aoDisplay.maybeLoadStyle(element.type);
                 element.done = true;
               } else {
                 helpElem.innerHTML = element.render;
@@ -128,6 +130,14 @@ const AO_DD = {
     var sections = this.data.page.sections;
     console.log(meta);
     this.doc.title = meta.title;
+    var desc = document.createElement("meta");
+    desc.setAttribute("content", meta.description);
+    desc.setAttribute("name", "description");
+    this.doc.head.appendChild(desc);
+    var keyW = document.createElement("meta");
+    keyW.setAttribute("content", meta.keywords);
+    keyW.setAttribute("name", "keywords");
+    this.doc.head.appendChild(keyW);
   },
   isInUserView(el) {
     //console.log('FunctionCall >> [ function isInUserView(el) ] || [ Elem: ' + el + ' ]');
@@ -194,6 +204,9 @@ const AO_DD = {
       if (stopPrint === false) {
 
         section.render = V_DomP(section);
+
+        this.maybeLoadStyle(section.type);
+
         document.getElementById(uid).innerHTML = section.render;
 
         console.log(document.getElementById(uid).clientHeight)
@@ -208,6 +221,41 @@ const AO_DD = {
         }
       }
     })
+  },
+  set styles(style = null) {
+    if (style !== null) {
+      try {
+        this.data.styles.push(style);
+      } catch (e) {
+        console.log("ERROR:>> " + e.message);
+        return false;
+      }
+      console.log("ADDED STYLE TO ARRAY")
+      document.body.innerHTML += style.style;
+      return true;
+    } else {
+      console.warn("ERROR:>> style EMPTY");
+    }
+  },
+  maybeLoadStyle(type) {
+    var stylesNumber = this.data.styles.length;
+    var shouldLoadStyle = true;
+    if (stylesNumber > 0) {
+      this.data.styles.forEach((style) => {
+        if (style.name === type) {
+          shouldLoadStyle = false;
+        }
+      })
+    };
+
+    if ((stylesNumber == 0) || (shouldLoadStyle)) {
+      this.styles = { name: type, style: V_DomS(type) };
+      console.log("STYLE LOADED :=: " + type);
+      return true;
+    }
+
+    console.log("NO STYLE LOADED");
+    return false;
   },
   init(page = null) {
     console.log('FunctionCall >> [ function initSSOSL() ]');

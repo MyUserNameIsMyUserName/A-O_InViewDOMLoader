@@ -12,9 +12,17 @@ const V_DomPrinter = {
 										<button onclick="${section.button.do}">${section.button.text}</button>
 									</div>
 									<div class="section_side">
-										<img src="${section.image.url}" width="${section.image.width}" height="${section.image.height}"/>
+										<img src="${section.image.url}" width="${section.image.width}" height="${section.image.height}" alt="${section.image.alt}"/>
 									</div>`
       },
+      paint() {
+        return `<style>
+									.hero_main {
+										background: #101525;
+										color: white;
+									}
+								</style>`;
+      }
     },
     {
       name: "newsletter_main",
@@ -27,6 +35,14 @@ const V_DomPrinter = {
 									<input type="text"/>
 									<button />SignUp</button>
 								</div>`
+      },
+      paint() {
+        return `<style>
+									.newsletter_main {
+										background: #152510;
+										color: white;
+									}
+								</style>`;
       }
     },
     {
@@ -37,6 +53,14 @@ const V_DomPrinter = {
 									<h5>${section.subtitle}</h5>
 									<p>${section.text}</p>
 								</div>`
+      },
+      paint() {
+        return `<style>
+									.about_default {
+										background: #251510;
+										color: white;
+									}
+								</style>`;
       }
     }
   ],
@@ -45,8 +69,24 @@ const V_DomPrinter = {
     if (section !== null) {
       this.templates.forEach(item => {
         if (section.type == item.name) {
-          console.log("FOUND TEMPLATE");
+          console.log("FOUND SECTION TEMPLATE");
           result = item.view(section.data);
+        }
+      })
+    } else {
+      console.warn("ERROR TYPE EMPTY");
+      result = false;
+    }
+    return result;
+  },
+
+  getStyle(type = null) {
+    var result = false;
+    if (type !== null) {
+      this.templates.forEach(item => {
+        if (type == item.name) {
+          console.log("FOUND SECTION STYLE");
+          result = item.paint();
         }
       })
     } else {
@@ -63,4 +103,10 @@ function returnTemplate(section) {
   return vDom.returnTemplate(section);
 }
 
+
+function getStyle(type) {
+  return vDom.getStyle(type);
+}
+
 let V_DomP = returnTemplate;
+let V_DomS = getStyle;
