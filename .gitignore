@@ -103,7 +103,7 @@ typings/
 .tern-port
 
 A-O_builder-express
-PUBLIC
+#PUBLIC
 package-lock.json
 dist/*
 !dist/ssosl.min.js
