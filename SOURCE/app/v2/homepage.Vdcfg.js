@@ -35,7 +35,7 @@ const page_home = {
         image: {
           width: 360,
           height: 360,
-          url: "/assets/img/logo.png",
+          url: "./logo.png",
           alt: "YEAAA MIKI"
         },
         background: {
@@ -56,7 +56,7 @@ const page_home = {
         image: {
           width: 180,
           height: 180,
-          url: "/assets/img/logo.png",
+          url: "./logo.png",
           alt: "MIKI222222"
         },
         background: {
@@ -80,14 +80,14 @@ const page_home = {
           do: "testCallbackFunction('3333333333Join today button alerting!')"
         },
         image: {
-          width: 50,
-          height: 50,
-          url: "/assets/img/logo.png",
+          width: 650,
+          height: 400,
+          url: "./pageBuilder_LoadTest1.png",
           alt: "YEAAA MIKI"
         },
         background: {
           type: "image",
-          url: "/assets/img/logo.png"
+          url: "./logo.png"
         }
       }
     },
@@ -111,11 +111,11 @@ const page_home = {
         image: {
           width: 50,
           height: 50,
-          url: "/assets/img/logo.png"
+          url: "./logo.png"
         },
         background: {
           type: "image",
-          url: "/assets/img/logo.png"
+          url: "./logo.png"
         }
       }
     },
@@ -138,11 +138,11 @@ const page_home = {
         image: {
           width: 50,
           height: 50,
-          url: "/assets/img/logo.png"
+          url: "./logo.png"
         },
         background: {
           type: "image",
-          url: "/assets/img/logo.png"
+          url: "./logo.png"
         }
       }
     },
@@ -165,12 +165,12 @@ const page_home = {
         image: {
           width: 50,
           height: 50,
-          url: "/assets/img/logo.png",
+          url: "./pageBuilder_LoadTest1.png",
           alt: "YEAAA MIKI"
         },
         background: {
           type: "image",
-          url: "/assets/img/logo.png"
+          url: "./logo.png"
         }
       }
     },
@@ -194,11 +194,11 @@ const page_home = {
         image: {
           width: 50,
           height: 50,
-          url: "/assets/img/logo.png"
+          url: "./logo.png"
         },
         background: {
           type: "image",
-          url: "/assets/img/logo.png"
+          url: "./logo.png"
         }
       }
     },
@@ -222,11 +222,11 @@ const page_home = {
         image: {
           width: 50,
           height: 50,
-          url: "/assets/img/logo.png"
+          url: "./logo.png"
         },
         background: {
           type: "image",
-          url: "/assets/img/logo.png"
+          url: "./logo.png"
         }
       }
     },
@@ -250,11 +250,11 @@ const page_home = {
         image: {
           width: 50,
           height: 50,
-          url: "/assets/img/logo.png"
+          url: "./logo.png"
         },
         background: {
           type: "image",
-          url: "/assets/img/logo.png"
+          url: "./logo.png"
         }
       }
     },
@@ -278,11 +278,11 @@ const page_home = {
         image: {
           width: 50,
           height: 50,
-          url: "/assets/img/logo.png"
+          url: "./pageBuilder_LoadTest1.png"
         },
         background: {
           type: "image",
-          url: "/assets/img/logo.png"
+          url: "./logo.png"
         }
       }
     },
@@ -306,11 +306,11 @@ const page_home = {
         image: {
           width: 50,
           height: 50,
-          url: "/assets/img/logo.png"
+          url: "./logo.png"
         },
         background: {
           type: "image",
-          url: "/assets/img/logo.png"
+          url: "./logo.png"
         }
       }
     },
@@ -334,11 +334,11 @@ const page_home = {
         image: {
           width: 50,
           height: 50,
-          url: "/assets/img/logo.png"
+          url: "./logo.png"
         },
         background: {
           type: "image",
-          url: "/assets/img/logo.png"
+          url: "./logo.png"
         }
       }
     }
