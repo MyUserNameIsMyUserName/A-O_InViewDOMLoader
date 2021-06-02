@@ -48,14 +48,14 @@ function htmlFunction() {
 
 function titleFunction() {
   console.log("titleFunction();");
-  app.elem.innerHTML += '<img src="/assets/img/logo.png"></img>';
+  document.getElementById('app').innerHTML += '<img src="/assets/img/logo.png"></img>';
 }
 
 function imgFunction() {
   console.log("imgFunction();")
   var btn = document.createElement("BUTTON");
   btn.innerHTML = "CLICK ME";
-  app.elem.appendChild(btn);
+  document.getElementById('app').appendChild(btn);
 }
 
 // Usage.
