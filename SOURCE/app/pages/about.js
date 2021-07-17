@@ -7,69 +7,93 @@
 //║       than few days, better have something prepared.          ║ √ 23.01.2021. ║
 //╚═══════════════════════════════════════════════════════════════╩═══════════════╝
 
+var app = {
+  //	elem: document.getElementById('app'),
+
+}
+
 function bodyFunction() {
-  console.log("bodyFunction();");
-  var helper = document.body.innerHTML;
-  document.body.innerHTML = '<div id="app"></div>' + helper;
+  //const t0 = performance.now();
+  //console.log("bodyFunction() :@: " + performance.now());
+
+  var el = document.createElement("div");
+  el.setAttribute("id", "app");
+  document.body.appendChild(el);
+
+  //const t1 = performance.now();
+  //console.log("EO_bodyFunction() :@: " + performance.now());
+  //console.log(`Call to bodyFunction took ${t1 - t0} milliseconds.`);
 }
 
 function appFunction() {
-  console.log("appFunction();");
-  document.getElementById("app").innerHTML = "<h1>ABOUT US PAGE SAMPLE</h1>";
+  //const t0 = performance.now();
+  //console.log("appFunction() :@: " + performance.now());
+
+
+  var h = document.createElement("H1");
+  var t = document.createTextNode("Welcome and have fun!");
+  h.appendChild(t);
+  document.getElementById('app').appendChild(h);
+  document.getElementById('app').appendChild(h);
+  document.getElementById('app').appendChild(h);
+
+  //const t1 = performance.now();
+  //console.log("EO_appFunction() :@: " + performance.now());
+  //console.log(`Call to appFunction took ${t1 - t0} milliseconds.`);
 }
 
 function htmlFunction() {
-  console.log("htmlFunction();");
+  console.log("htmlFunction();")
 }
 
 function titleFunction() {
   console.log("titleFunction();");
-  document.getElementById("app").innerHTML +=
-    '<img src="/assets/img/logo.png"></img>';
+  app.elem.innerHTML += '<img src="/assets/img/logo.png"></img>';
 }
 
 function imgFunction() {
-  console.log("imgFunction();");
-  wnd.dispatchEvent(new Event("onpageload"));
+  console.log("imgFunction();")
+  var btn = document.createElement("BUTTON");
+  btn.innerHTML = "CLICK ME";
+  app.elem.appendChild(btn);
 }
 
 // Usage.
-let appItems = [
-  {
-    className: "body",
-    done: false,
+var appItems = [{
+    "className": "body",
+    "done": false,
     call() {
       bodyFunction();
-    },
+    }
   },
   {
-    className: "#app",
-    done: false,
+    "className": "#app",
+    "done": false,
     call() {
       appFunction();
-    },
+    }
   },
   {
-    className: "html",
-    done: false,
+    "className": "html",
+    "done": false,
     call() {
       htmlFunction();
-    },
+    }
   },
   {
-    className: "h1",
-    done: false,
+    "className": "h1",
+    "done": false,
     call() {
       titleFunction();
-    },
+    }
   },
   {
-    className: "img",
-    done: false,
+    "className": "img",
+    "done": false,
     call() {
       imgFunction();
-    },
-  },
+    }
+  }
 ];
 
 //▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
