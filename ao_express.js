@@ -10,18 +10,13 @@ const APP_HOST = process.env.APP_HOST;
 const APP_PORT = process.env.APP_PORT;
 const APP_FOLDER = process.env.APP_FOLDER;
 let APP_URL = APP_PROTOCOL + "://" + APP_HOST; 
-if ((APP_PORT == "") || (APP_FOLDER == "")){
 
-    if (APP_PORT != ""){
-        APP_URL = APP_URL + ":" + APP_PORT;
-    } 
-    
-    if (APP_FOLDER != ""){
-        APP_URL = APP_URL + "/" + APP_FOLDER;
-    }
+if (APP_PORT != ""){
+    APP_URL = APP_URL + ":" + APP_PORT;
+} 
 
-} else {
-
+if (APP_FOLDER != ""){
+    APP_URL = APP_URL + "/" + APP_FOLDER;
 }
 
 const STATIC = path.resolve(__dirname, "PUBLIC");
