@@ -1,5 +1,5 @@
 let path = require("path");
-let isDev = require("./src/universal_modules/Dev_Mode_Detector/is_dev");
+let isDev = require("./src/app/universal_modules/is_dev");
 
 let config = {
   production: {

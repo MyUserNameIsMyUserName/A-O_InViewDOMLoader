@@ -1,4 +1,4 @@
-
+require("dotenv").config();
 
 function isDev() {
 	var isDevCheck = false;

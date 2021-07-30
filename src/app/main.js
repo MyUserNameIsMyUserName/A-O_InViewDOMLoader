@@ -1,5 +1,5 @@
-require("dotenv").config();
-const isDev = require("../universal_modules/Dev_Mode_Detector/is_dev");
+
+const isDev = require("./universal_modules/is_dev");
 
 const V_App = {
   config: {
