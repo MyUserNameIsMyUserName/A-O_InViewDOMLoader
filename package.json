@@ -1,13 +1,15 @@
 {
-	"name": "V_DisplayDriver",
+	"name": "v_display_driver",
 	"version": "1.0.0",
 	"description": "V_DisplayDriver is here to help your website by only triggering what your user currently sees.",
 	"main": "index.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"build": "webpack",
-		"set_dev_env": "cp \"./system/config/env/_DEV\" \"./.env\" ",
-		"app": "node ./src/app.js"
+		"build": "webpack --config webpack.app.config.js",
+		"set_dev_env": "cp \"./system/config/env/_Dev\" \"./.env\" ",
+		"set_pro_env": "cp \"./system/config/env/_Pro\" \"./.env\" ",
+		"app": "npm run set_pro_env && npm run build && node ./src/app/main.js",
+		"app_dev": "nodemon --exec \"npm run set_dev_env && npm run build && node ./src/app/main.js\""
 	},
 	"repository": {
 		"type": "git",
