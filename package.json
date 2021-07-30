@@ -5,6 +5,7 @@
 	"main": "index.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
+		"install": "npm install --also=dev",
 		"build": "npm run build_server && npm run build_app ",
 		"build_app": "webpack --config webpack.app.config.js",
 		"build_server": "webpack --config webpack.server.config.js",
