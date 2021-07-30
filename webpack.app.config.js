@@ -1,44 +1,48 @@
 let path = require("path");
-let isDev = require("./src/app/universal_modules/is_dev");
-
-let config = {
+let is_dev = require("./src/universal_modules/is_dev/is_dev");
+var config;
+let webpack_config_options = {
   production: {
     mode: "production",
     entry: {
-			main: "./src/app/main.js"
-		},
-		output: {
-		path: path.resolve(__dirname, "dist/app"),
-		filename: "[name].pack.js",
-		clean: true,
+      main: "./src/app.js",
     },
-		resolve: {
-			fallback: {
-				fs: false,
-				path: false
-			},
-		},
+    output: {
+      path: path.resolve(__dirname, "dist/app"),
+      filename: "[name].v_block.js",
+      clean: true,
+    },
+		target: ['web', 'es6'],
+    resolve: {
+      fallback: {
+        fs: false,
+        path: false,
+      },
+    },
   },
   development: {
     mode: "development",
     entry: {
-			main: "./src/app/main.js"
-		},
+      main: "./src/app.js",
+    },
+		target: ['web', 'es6'],
     output: {
       path: path.resolve(__dirname, "dist/app"),
-      filename: "[name].pack.js",
+      filename: "[name].v_block.js",
     },
-		resolve: {
-			fallback: {
-				fs: false,
-				path: false
-			},
-		},
+    resolve: {
+      fallback: {
+        fs: false,
+        path: false,
+      },
+    },
   },
 };
 
-if (isDev){
-	module.exports = config.development;
+if (is_dev()) {
+  config = webpack_config_options.development;
 } else {
-	module.exports = config.production;
+  config = webpack_config_options.production;
 }
+
+module.exports = config;

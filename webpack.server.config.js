@@ -1,32 +1,39 @@
 let path = require("path");
-let isDev = require("./src/app/universal_modules/is_dev").default
+let is_dev = require("./src/universal_modules/is_dev/is_dev");
 
-let config = {
+let config = {};
+
+let webpack_config_options = {
   production: {
     mode: "production",
+		target: "node",
     entry: {
-			main: "./src/server/main.js"
-		},
-		output: {
-		path: path.resolve(__dirname, "dist/api"),
-		filename: "[name].pack.js",
-		clean: true,
+      main: "./server.js",
     },
+    output: {
+      path: path.resolve(__dirname, "dist"),
+      filename: "[name].v_enp.js",
+      clean: true,
+    },
+    
   },
   development: {
     mode: "development",
+		target: "node",
     entry: {
-			main: "./src/server/main.js"
-		},
+      main: "./server.js",
+    },
     output: {
-      path: path.resolve(__dirname, "dist/api"),
-      filename: "[name].pack.js",
+      path: path.resolve(__dirname, "dist"),
+      filename: "[name].v_enp.js",
     },
   },
 };
 
-if (isDev){
-	module.exports = config.development;
+if (is_dev()) {
+  config = webpack_config_options.development;
 } else {
-	module.exports = config.production;
+  config = webpack_config_options.production;
 }
+
+module.exports = config;
