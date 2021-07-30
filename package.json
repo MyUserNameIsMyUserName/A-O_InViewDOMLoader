@@ -1,50 +1,45 @@
 {
-  "name": "ssosl-superspeedonscrollloader.js",
-  "version": "1.0.0",
-  "description": "Way to load stuff in modern web.",
-  "main": "index.js",
-  "scripts": {
-    "test": "istanbul cover PUBLIC/ssosl.js",
-    "__make_application__": " bash -c \" echo '--!!SHOULD ONLY RUN ONE TIME WHEN YOU BUILD PROJECT!!--' && exit 1 ; npm run _install && cp -r ./A-O_builder-express/SOURCE ./ && cp ./A-O_builder-express/ao_express.js ./ao_express.js \"",
-    "_install": " npm install copy-dependencies -g && bash -c \" git clone https://github.com/MyUserNameIsMyUserName/A-O_builder-express.git  && copy-dependencies ./A-O_builder-express/ ./ && echo |bash A-O_builder-express/ao_builder/install.sh \"",
-    "_uninstall": "bash -c \" rm -r  A-O_builder-express -f && rm -r node_modules -f && rm -r PUBLIC -f && rm package-lock.json \"",
-    "_build": "bash A-O_builder-express/ao_builder/build.sh ",
-    "_build_dev": "bash A-O_builder-express/ao_builder/build.sh dev",
-    "_build_and_serve": "npm run _build && npm run _serve ",
-    "_serve": "start node ao_express.js",
-    "in_": "npm run _install",
-    "uni_": "npm run _uninstall",
-    "b_": "npm run _build",
-    "bs_": "npm run _build_and_serve",
-    "bsd_": "  npm run _serve && nodemon --exec npm run _build_dev --ignore PUBLIC",
-    "_local_tunnel": "npm run ao && start lt --port 8888",
-    "lt_": "npm run _local_tunnel",
-    "_dist": "  start bash -c \" bash -c 'npm run in_' ; bash -c 'npm run b_' ; bash -c 'rm -rf dist' ; bash -c 'mkdir dist' ; bash -c 'cp ./PUBLIC/ssosl.js ./dist/ssosl.min.js ' ;  \"",
-    "stop_ngrok_tunnel":"bash -c \" taskkill -f -im ngrok.exe \" "
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/MyUserNameIsMyUserName/SSOSL-SuperSpeedOnScrollLoader.js.git"
-  },
-  "keywords": [],
-  "author": "Slavko Vuletic",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/MyUserNameIsMyUserName/SSOSL-SuperSpeedOnScrollLoader.js/issues"
-  },
-  "homepage": "https://github.com/MyUserNameIsMyUserName/SSOSL-SuperSpeedOnScrollLoader.js#readme",
-  "private": true,
-  "dependencies": {
-    "@babel/cli": "^7.12.10",
-    "@babel/core": "^7.12.10",
-    "autoprefixer": "^6.5.4",
-    "babel-loader": "^8.2.2",
-    "babel-plugin-remove-comments": "^2.0.0",
-    "browserslist": "^4.16.3",
-    "compression": "^1.7.4",
-    "dotenv": "^9.0.2",
-    "express": "^4.17.1",
-    "livereload": "^0.9.1",
-    "webpack": "^5.16.0"
-  }
+	"name": "v_display_driver",
+	"version": "1.0.0",
+	"description": "V_DisplayDriver is here to help your website by only triggering what your user currently sees.",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"install": "npm install --also=dev",
+		"build": "npm run build_server && npm run build_app ",
+		"build_app": "webpack --config webpack.app.config.js",
+		"build_server": "webpack --config webpack.server.config.js",
+		"set_dev_env": "cp \"./system/config/env/_Dev\" \"./.env\" ",
+		"set_pro_env": "cp \"./system/config/env/_Pro\" \"./.env\" ",
+		"app": "npm run set_pro_env && npm run build && node ./dist/main.v_enp.js",
+		"app_dev": "nodemon --exec \"npm run set_dev_env && npm run build && node ./server.js\""
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/MyUserNameIsMyUserName/A-O_InViewDOMLoader.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/MyUserNameIsMyUserName/A-O_InViewDOMLoader/issues"
+	},
+	"homepage": "https://github.com/MyUserNameIsMyUserName/A-O_InViewDOMLoader#readme",
+	"dependencies": {
+		"dotenv": "^9.0.2",
+		"express": "^4.17.1",
+		"is-online": "^9.0.1",
+		"jshint": "^2.13.0",
+		"lodash": "^4.17.20",
+		"nodemon": "^2.0.12",
+		"open": "^8.2.1",
+		"page-fps": "^1.0.2",
+		"systeminformation": "^5.7.8",
+		"username": "^5.1.0",
+		"web-vitals": "^2.1.0"
+	},
+	"devDependencies": {
+		"webpack": "^5.46.0",
+		"webpack-cli": "^4.7.2"
+	}
 }
