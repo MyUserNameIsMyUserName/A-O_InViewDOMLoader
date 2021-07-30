@@ -11,7 +11,7 @@
 		"build_server": "webpack --config webpack.server.config.js",
 		"set_dev_env": "cp \"./system/config/env/_Dev\" \"./.env\" ",
 		"set_pro_env": "cp \"./system/config/env/_Pro\" \"./.env\" ",
-		"app": "npm run set_pro_env && npm run build && node ./dist/main.v_enp.js",
+		"app": "npm run set_pro_env && npm run build && node ./server.js",
 		"app_dev": "nodemon --exec \"npm run set_dev_env && npm run build && node ./server.js\""
 	},
 	"repository": {
