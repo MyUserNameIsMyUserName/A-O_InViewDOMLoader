@@ -1,5 +1,6 @@
 # LOCALHOST  >|<  DEVELOPER ENV SETTINGS ->>
 APP_PROTOCOL=http
 APP_HOST=localhost
-APP_PORT=7744
+APP_PORT=4000
 APP_FOLDER=random/folder
+NODE_ENV=development

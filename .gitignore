@@ -1,7 +1,32 @@
+
+# package-lock FILE IGNORE
 package-lock.json
+
+# node_modules FOLDER
 node_modules
 node_modules/
 node_modules/*
+./node_modules
+./node_modules/
+./node_modules/*
+
+
+# VS_CODE FOLDER
 .vscode
-.vscode/*
 .vscode/
+.vscode/*
+./.vscode
+./.vscode/
+./.vscode/*
+
+# ENV FILE IGNORE
+.env
+
+
+# dist FOLDER IGNORE
+dist
+dist/
+dist/*
+./dist
+./dist/
+./dist/*
