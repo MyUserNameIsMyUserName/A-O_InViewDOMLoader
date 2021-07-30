@@ -6,9 +6,10 @@ let config = {};
 let webpack_config_options = {
   production: {
     mode: "production",
-		target: "node",
+		target: ["node", "es6"],
     entry: {
       main: "./server.js",
+      is_empty_value: "./src/universal_modules/is_empty_value/is_empty_value.js",
     },
     output: {
       path: path.resolve(__dirname, "dist"),
@@ -19,9 +20,10 @@ let webpack_config_options = {
   },
   development: {
     mode: "development",
-		target: "node",
+		target: ["node", "es6"],
     entry: {
       main: "./server.js",
+      is_empty_value: "./src/universal_modules/is_empty_value/is_empty_value.js",
     },
     output: {
       path: path.resolve(__dirname, "dist"),

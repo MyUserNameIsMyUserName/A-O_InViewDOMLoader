@@ -1,8 +1,9 @@
-is_empty_value = (value = "") => {
-  return value === "" ? true : false;
+function is_empty_value (value = "") {
+   value = ( value === "" ? true : false );
+	 return value;
 };
 
-v0 = (value) => {
+function v0 (value = "") {
 	return is_empty_value(value);
 }
 

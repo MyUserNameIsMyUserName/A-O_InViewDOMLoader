@@ -1,4 +1,5 @@
-let v0 = require("../is_empty_value/is_empty_value");
+let path = require("path");
+const { is_empty_value, v0 } = require( path.relative( __dirname,"src/universal_modules/is_empty_value/is_empty_value") )
 
 const v_dom_printer = {
   config: {
@@ -14,27 +15,30 @@ const v_dom_printer = {
   data: {
     // Maybe some data storage for later
   },
-  do: {
-    init() {
-      console.log(this);
-    },
-    print(params = "") {
-      if (v0(params)) {
-        console.log("PARAMS HAVE CONTENT");
-      } else {
-        console.log("PARAMS MISSING CONTENT");
-      }
-      console.log(params);
-    },
-    findTemplate(name = "") {
-      if (v0(name)) {
-        console.log("FOUND NAME");
-      } else {
-        console.log("MISSING NAME");
-      }
-      console.log(name);
-    },
-  },
+	init() {
+		console.log(">> In [ v_dom_printer.init() ]");
+		//console.log(this);
+		//console.log("<< Out [ v_dom_printer.init() ]");
+		return JSON.stringify(v_dom_printer);
+	},
+	print(params = "") {
+		if (is_empty_value(params)) {
+			console.log("PARAMS HAVE CONTENT");
+		} else {
+			console.log("PARAMS MISSING CONTENT");
+		}
+		console.log(params);
+		return JSON.stringify(v_dom_printer);
+	},
+	findTemplate(name = ""){
+		if (is_empty_value(name)) {
+			console.log("FOUND NAME");
+		} else {
+			console.log("MISSING NAME");
+		}
+		console.log(name);
+		return JSON.stringify(v_dom_printer);
+	},
 };
 
 module.exports = v_dom_printer;

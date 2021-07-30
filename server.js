@@ -3,11 +3,15 @@ const open = require("open");
 const express = require("express");
 const app = express();
 const port = 3000;
-const v_dom_printer = require('./src/universal_modules/v_dom_printer/v_dom_printer');
-const is_dev = require('./src/universal_modules/is_dev/is_dev');
+let v_dom_printer = require('./src/universal_modules/v_dom_printer/v_dom_printer');
+let is_dev = require('./src/universal_modules/is_dev/is_dev');
+
+app.get("/", (req, res) => {
+  res.send("Hello World! <br> page_slug: " +req.params.page_slug+" ; <br> req.baseUrl : "+req.baseUrl+" ; <br> is_dev: "+is_dev()+" ; <br> "+ v_dom_printer.init()+" ; <br> "+ v_dom_printer.print()+" ; <br> "+ v_dom_printer.findTemplate() );
+});
 
 app.get("/:page_slug", (req, res) => {
-  res.send("Hello World! \n page_slug: " +req.params.page_slug+" ; req.baseUrl : "+req.baseUrl+" ; is_dev: "+is_dev());
+  res.send("FIND SLUG OF A PAGE!  <br> page_slug: " +req.params.page_slug+" ; <br> req.baseUrl : "+req.baseUrl+" ; <br> is_dev: "+is_dev());
 });
 
 app.listen(port, () => {
