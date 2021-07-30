@@ -1,7 +1,7 @@
 {
   "name": "V_DisplayDriver",
   "version": "1.0.0",
-  "description": "",
+  "description": "V_DisplayDriver is here to help your website by only triggering what your user currently sees.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/MyUserNameIsMyUserName/A-O_InViewDOMLoader/issues"
   },
-  "homepage": "https://github.com/MyUserNameIsMyUserName/A-O_InViewDOMLoader#readme"
+  "homepage": "https://github.com/MyUserNameIsMyUserName/A-O_InViewDOMLoader#readme",
+  "dependencies": {
+    "jshint": "^2.13.0"
+  }
 }
