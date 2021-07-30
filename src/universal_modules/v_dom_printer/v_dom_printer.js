@@ -14,30 +14,44 @@ const v_dom_printer = {
   },
   data: {
     // Maybe some data storage for later
+		templates: [
+			{
+				name: 'script_file_chunk',
+				file: '<script src="${url}" ></script>',
+			}
+		]
   },
 	init() {
 		console.log(">> In [ v_dom_printer.init() ]");
 		//console.log(this);
 		//console.log("<< Out [ v_dom_printer.init() ]");
-		return JSON.stringify(v_dom_printer);
 	},
 	print(params = "") {
-		if (is_empty_value(params)) {
+		if (!is_empty_value(params)) {
 			console.log("PARAMS HAVE CONTENT");
+			const TMPL_FILE = this.findTemplate(params.fileName);
+			console.log(TMPL_FILE);
 		} else {
 			console.log("PARAMS MISSING CONTENT");
 		}
 		console.log(params);
-		return JSON.stringify(v_dom_printer);
 	},
-	findTemplate(name = ""){
-		if (is_empty_value(name)) {
+	findTemplate(file_name = ""){
+		if (!is_empty_value(file_name)) {
 			console.log("FOUND NAME");
+			this.data.templates.forEach(tmplFile => {
+				if (file_name == tmplFile.name) {
+					console.log("FOUND TEMPLATE FILE");
+					return tmplFile.file;
+				} else {
+					console.log("NO SUCH TEMPLATE FILE")
+					return false;
+				}
+			});
 		} else {
 			console.log("MISSING NAME");
+			return null;
 		}
-		console.log(name);
-		return JSON.stringify(v_dom_printer);
 	},
 };
 
