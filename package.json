@@ -5,14 +5,13 @@
 	"main": "index.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"install": "npm install --also=dev",
 		"build": "npm run build_server && npm run build_app ",
 		"build_app": "webpack --config webpack.app.config.js",
 		"build_server": "webpack --config webpack.server.config.js",
 		"set_dev_env": "cp \"./system/config/env/_Dev\" \"./.env\" ",
 		"set_pro_env": "cp \"./system/config/env/_Pro\" \"./.env\" ",
-		"app": "npm run set_pro_env && npm run build_app && node ./server.js",
-		"app_dev": "nodemon --exec \"npm run set_dev_env && npm run build_app && node ./server.js\""
+		"app": "npm run set_pro_env && npm run build_app && node ./v_express_server.js",
+		"app_dev": "nodemon --exec \"npm run set_dev_env && npm run build_app && node ./v_express_server.js\""
 	},
 	"repository": {
 		"type": "git",
@@ -26,6 +25,7 @@
 	},
 	"homepage": "https://github.com/MyUserNameIsMyUserName/A-O_InViewDOMLoader#readme",
 	"dependencies": {
+		"compression": "^1.7.4",
 		"dotenv": "^9.0.2",
 		"express": "^4.17.1",
 		"is-online": "^9.0.1",

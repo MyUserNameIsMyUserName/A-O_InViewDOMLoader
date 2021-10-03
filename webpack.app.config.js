@@ -1,11 +1,12 @@
 let path = require("path");
-let is_dev = require("./src/universal_modules/is_dev/is_dev");
+let is_dev = require("./src/modules/is_dev");
 var config;
 let webpack_config_options = {
   production: {
     mode: "production",
     entry: {
-      main: "./src/app.js",
+      app: "./src/application_root.js",
+      v_display_driver: "./src/v_display_driver.js",
     },
     output: {
       path: path.resolve(__dirname, "dist/app"),

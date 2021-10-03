@@ -1,4 +1,4 @@
-const { is_empty_value, v0 } = require("./is_empty_value");
+const { is_empty_value, v0 } = require(".");
 
 var someTestValEmpty = "";
 console.log(is_empty_value(someTestValEmpty));
